@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  .side-menu {
+    min-width: 250px;
+  }
+  .middle-content {
+    flex: auto;
+  }
+}
