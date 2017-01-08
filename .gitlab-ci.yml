@@ -1,0 +1,45 @@
+image: "docker:git"
+services:
+  - docker:dind
+
+stages:
+- test
+- deploy
+
+variables:
+  CONTAINER_TEST_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:$CI_BUILD_REF_NAME
+  CONTAINER_RELEASE_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:latest
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
+
+test:
+  stage: test
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
+    
+    - docker run $CONTAINER_TEST_IMAGE npm test
+
+    - docker run $CONTAINER_TEST_IMAGE npm run build
+
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
+
+deploy-testing:
+  stage: deploy
+  script:
+    - mkdir -p /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - cp docker-compose.yml /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}/docker-compose.yml
+    - cd /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - docker-compose stop
+    - docker-compose pull
+    - docker-compose rm -f
+    - docker-compose up -d
+  except:
+    - master
+  tags:
+    - tedy.nibor.me
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: http://$CI_BUILD_REF_NAME.rust-admin.nibor.me
