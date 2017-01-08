@@ -17,10 +17,10 @@ test:
   stage: test
   script:
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
-    
+
     - docker run $CONTAINER_TEST_IMAGE npm test
 
-    - docker run $CONTAINER_TEST_IMAGE npm run build
+    - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
 
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
