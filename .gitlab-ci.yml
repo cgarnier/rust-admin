@@ -23,8 +23,7 @@ test:
     - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
 
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
-    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
-    - docker push $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_TEST_IMAGE
   tags:
     - dind
 
