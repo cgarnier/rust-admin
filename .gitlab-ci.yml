@@ -25,9 +25,6 @@ test:
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
     - docker push $CONTAINER_RELEASE_IMAGE
-  tags:
-    - dind
-
 
 deploy-testing:
   stage: deploy
