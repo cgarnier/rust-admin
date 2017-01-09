@@ -1,15 +1,14 @@
 <template>
   <div class="home-page">
-    <div class="expanded row">
-      <div class="column small-12">
-        <h1>Home</h1>
-        <p>Some stats</p>
-      </div>
-    </div>
+    <server-info></server-info>
   </div>
 </template>
 
 <script type="text/babel">
+  import ServerInfo from '../server-infos/ServerInfos.vue'
   export default {
+    components: {
+      ServerInfo
+    }
   }
 </script>
