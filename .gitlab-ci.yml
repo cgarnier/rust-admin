@@ -24,6 +24,9 @@ test:
 
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker push $CONTAINER_TEST_IMAGE
+  cache:
+    paths:
+    - node_modules/
   tags:
     - dind
 
