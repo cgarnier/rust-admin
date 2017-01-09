@@ -10,7 +10,7 @@ variables:
   CONTAINER_TEST_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:$CI_BUILD_REF_NAME
   CONTAINER_RELEASE_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:latest
   #https://gitlab.com/gitlab-org/gitlab-ce/issues/17861#note_12991518
-  DOCKER_DRIVER: overlay
+  DOCKER_DRIVER: aufs
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
