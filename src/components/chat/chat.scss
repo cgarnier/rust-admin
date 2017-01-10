@@ -1,0 +1,41 @@
+$log: #7d7d7d;
+.chat {
+  .chat-wrapper {
+    height: calc(100vh - 96px);
+    .chat-content {
+      color: rgb(196, 196, 196);
+      background-color: #0c0c0c;
+      padding-left: 8px;
+      padding-right: 8px;
+      font-size: 12px;
+      font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+      .chat-entry {
+        flex-wrap: nowrap;
+        display: flex;
+        .name {
+          width: 140px;
+          opacity: 0.7;
+        }
+        .date {
+          width: 170px;
+          opacity: 0.7;
+        }
+        .message {
+          flex: auto;
+        }
+      }
+    }
+    overflow: scroll;
+  }
+  .chat-input {
+    form {
+      display: flex;
+      input {
+        margin: 0;
+      }
+      button {
+        margin: 0;
+      }
+    }
+  }
+}

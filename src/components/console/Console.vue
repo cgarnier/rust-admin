@@ -29,7 +29,7 @@
         logs: [],
         commandsHistory: [],
         historyIndex: 0,
-        commandList: ['', 'test1', 'test2'],
+        commandList: [''],
         input: ''
       }
     },
