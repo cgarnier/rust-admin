@@ -68,6 +68,9 @@
           }
         })
       }
+    },
+    beforeDestroy () {
+      ChatService.off(this.handleMessage)
     }
   }
 </script>

@@ -2,6 +2,7 @@
 import EventHub from './EventHub'
 /**
  * RconService
+ * @event rcon-message
  */
 class RconService {
   constructor () {
