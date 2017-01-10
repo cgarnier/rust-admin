@@ -19,7 +19,7 @@ class ConsoleService {
    * @param fn
    */
   on (fn) {
-    RconService.on('generic-message', fn)
+    RconService.on(fn)
   }
 
   /**
