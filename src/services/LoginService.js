@@ -18,7 +18,7 @@ class LoginService {
     localStorage.removeItem('rcon_address')
     localStorage.removeItem('rcon_password')
     EventHub.$emit('logout')
-    RconService.disconect()
+    RconService.disconnect()
   }
   restore () {
     let addr = localStorage.getItem('rcon_address')

@@ -1,13 +1,28 @@
 /* global WebSocket */
-class RconService {
+import {EventEmitter} from 'events'
+/**
+ * RconService
+ */
+class RconService extends EventEmitter {
   constructor () {
+    super()
     this.callbacks = {}
     this.lastIndex = 1001
   }
 
-  disconect () {
+  /**
+   * Disconnect websocket
+   */
+  disconnect () {
     this.socket.close()
   }
+
+  /**
+   * Connect to the rcon websocket
+   * @param addr rcon address
+   * @param pass rcon password
+   * @returns {Promise}
+   */
   connect (addr, pass) {
     return new Promise((resolve, reject) => {
       this.socket = new WebSocket('ws://' + addr + '/' + pass)
@@ -33,9 +48,7 @@ class RconService {
         //
         // Generic console message, let onMessage catch it
         //
-        if (this.onMessage != null) {
-          this.onMessage(data)
-        }
+        this.handleGeneric(data)
       }
 
       this.socket.onopen = () => {
@@ -48,10 +61,19 @@ class RconService {
       }
     })
   }
+
+  /**
+   * Handle socket close event
+   */
   onClose () {
     console.log('ws connection closed')
   }
 
+  /**
+   * Send a command to the socket
+   * @param msg
+   * @param identifier
+   */
   command (msg, identifier) {
     if (!identifier) {
       identifier = -1
@@ -74,9 +96,11 @@ class RconService {
     this.socket.send(JSON.stringify(packet))
   }
 
-  //
-  // Make a request, call this function when it returns
-  //
+  /**
+   * Send an rcon request that expect a response
+   * @param msg
+   * @returns {Promise}
+   */
   request (msg) {
     return new Promise((resolve, reject) => {
       this.lastIndex++
@@ -90,16 +114,47 @@ class RconService {
     })
   }
 
-  //
-  // Returns true if websocket is connected
-  //
+  /**
+   * Check if socket is ready
+   * @returns {boolean}
+   */
   isConnected () {
+    // TODO make a waiter with a promise
     if (this.socket == null) return false
     return this.socket.readyState === 1
   }
 
+  /**
+   * Old get player method
+   * @deprecated Use {PlayerService} instead
+   * @returns {*}
+   */
   getPlayers () {
     return this.request('playerlist')
+  }
+
+  /**
+   * Handle generic message
+   * @param data
+   */
+  handleGeneric (data) {
+    this.emit('generic-message', data)
+  }
+
+  /**
+   * Helper to register a generic message handler
+   * @param fn callback function
+   */
+  onGeneric (fn) {
+    this.on('generic-message', fn)
+  }
+
+  /**
+   * Helper to unregister a generic message event handler
+   * @param fn
+   */
+  offGeneric (fn) {
+    this.removeListener('generic-message', fn)
   }
 }
 
