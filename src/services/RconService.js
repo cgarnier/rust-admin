@@ -1,11 +1,10 @@
 /* global WebSocket */
-import {EventEmitter} from 'events'
+import EventHub from './EventHub'
 /**
  * RconService
  */
-class RconService extends EventEmitter {
+class RconService {
   constructor () {
-    super()
     this.callbacks = {}
     this.lastIndex = 1001
   }
@@ -138,23 +137,23 @@ class RconService extends EventEmitter {
    * @param data
    */
   handleGeneric (data) {
-    this.emit('generic-message', data)
+    EventHub.$emit('rcon-message', data)
   }
 
   /**
-   * Helper to register a generic message handler
+   * Helper to register a rcon message handler
    * @param fn callback function
    */
-  onGeneric (fn) {
-    this.on('generic-message', fn)
+  on (fn) {
+    EventHub.$on('rcon-message', fn)
   }
 
   /**
-   * Helper to unregister a generic message event handler
+   * Helper to unregister a rcon message event handler
    * @param fn
    */
-  offGeneric (fn) {
-    this.removeListener('generic-message', fn)
+  off (fn) {
+    EventHub.$off('rcon-message', fn)
   }
 }
 
