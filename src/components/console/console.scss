@@ -1,0 +1,49 @@
+$warning: #cc8022;
+$log: #7d7d7d;
+.console {
+  .logs-container {
+    height: calc(100vh - 96px);
+    .logs {
+      color: rgb(196, 196, 196);
+      background-color: #0c0c0c;
+      padding-left: 8px;
+      padding-right: 8px;
+      font-size: 12px;
+      font-family: "Menlo", "Liberation Mono", "Consolas", "DejaVu Sans Mono", "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+      .log-entry {
+        flex-wrap: nowrap;
+        display: flex;
+        .type {
+          width: 90px;
+          opacity: 0.7;
+        }
+        .date {
+          width: 220px;
+          opacity: 0.7;
+        }
+        .message {
+          flex: auto;
+        }
+
+        &.Warning-log {
+          color: $warning;
+        }
+        &.Log-log {
+          color: $log;
+        }
+      }
+    }
+    overflow: scroll;
+  }
+  .console-input {
+    form {
+      display: flex;
+      input {
+        margin: 0;
+      }
+      button {
+        margin: 0;
+      }
+    }
+  }
+}
