@@ -18,6 +18,10 @@ class ServerInfosService {
     }, INTERVAL)
   }
 
+  /**
+   * Get the server info
+   * @returns {Promise.<TResult>}
+   */
   infos () {
     return RconService.request('serverinfo')
       .then((res) => {

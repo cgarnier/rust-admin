@@ -1,5 +1,8 @@
 import RconService from './RconService'
 
+/**
+ * Console service
+ */
 class ConsoleService {
   /**
    * Get the console lines
@@ -27,9 +30,14 @@ class ConsoleService {
    * @param fn
    */
   off (fn) {
-    RconService.removeListener('generic-message', fn)
+    RconService.off(fn)
   }
 
+  /**
+   * Send an rcon command
+   * @param cmd
+   * @returns {*}
+   */
   send (cmd) {
     return RconService.command(cmd)
   }
