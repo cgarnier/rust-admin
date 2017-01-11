@@ -64,3 +64,5 @@ stop_review_app:
   environment:
     name: review/$CI_BUILD_REF_NAME
     action: stop
+  tags:
+    - tedy.nibor.me
