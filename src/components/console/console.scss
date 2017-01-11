@@ -23,6 +23,7 @@ $log: #7d7d7d;
         }
         .message {
           flex: auto;
+          white-space: pre;
         }
 
         &.Warning-log {
