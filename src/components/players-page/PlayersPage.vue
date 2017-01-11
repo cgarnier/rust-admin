@@ -17,8 +17,8 @@
           </thead>
           <tbody>
           <tr v-for="p in players">
-            <td v-text="p.DisplayName"></td>
-            <td v-text="p.SteamID"></td>
+            <td><router-link :to="{name: 'player', params: {id: p.SteamID}}" v-text="p.DisplayName"></router-link></td>
+            <td><router-link :to="{name: 'player', params: {id: p.SteamID}}" v-text="p.SteamID"></router-link></td>
             <td v-text="p.VoiationLevel"></td>
             <td v-text="p.Address"></td>
             <td v-text="p.Duration"></td>

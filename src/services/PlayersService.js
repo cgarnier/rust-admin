@@ -22,6 +22,21 @@ class PlayersService {
     ])
   }
 
+  /**
+   * Get a player form its SteamId
+   * @param id SteamID
+   */
+  get (id) {
+    return this.list()
+      .then(res => {
+        let player = res.find(p => p.UserId === id)
+        if (!player) {
+          throw new Error('Player is not connected')
+        }
+        return player
+      })
+  }
+
   inGame () {
     return RconService.request('players')
       .then(res => {
