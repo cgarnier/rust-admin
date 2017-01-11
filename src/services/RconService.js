@@ -106,7 +106,11 @@ class RconService {
       this.lastIndex++
       this.callbacks[ this.lastIndex ] = (data) => {
         if (data.Message) {
-          data.Message = JSON.parse(data.Message)
+          try {
+            data.Message = JSON.parse(data.Message)
+          } catch (e) {
+            // ignore
+          }
         }
         resolve(data)
       }
