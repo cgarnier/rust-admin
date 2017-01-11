@@ -41,6 +41,20 @@ class ConsoleService {
   send (cmd) {
     return RconService.command(cmd)
   }
+
+  /**
+   * Get logs for the given user
+   * @param steamId
+   * @returns {Promise.<TResult>}
+   */
+  filterBySteamID (steamId) {
+    return this.tail(10000)
+      .then(res => {
+        return res.filter(r => {
+          return JSON.stringify(r).indexOf(steamId) !== -1
+        })
+      })
+  }
 }
 
 export default new ConsoleService()
