@@ -14,6 +14,25 @@ class PlayersService {
         return res.Message
       })
   }
+
+  listWithPosition () {
+    return Promise.all([
+      this.list(),
+      this.inGame()
+    ])
+  }
+
+  inGame () {
+    return RconService.request('players')
+      .then(res => {
+        return res.Message
+          .split('\n')
+          .slice(1)
+      })
+      .then(res => {
+        return res
+      })
+  }
 }
 
 export default new PlayersService()
