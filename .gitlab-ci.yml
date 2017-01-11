@@ -51,3 +51,18 @@ deploy-testing:
   environment:
     name: review/$CI_BUILD_REF_NAME
     url: http://$CI_BUILD_REF_NAME.rust-admin.nibor.me
+    on_stop: stop_review_app
+
+stop_review_app:
+  stage: deploy
+  script:
+    - cd /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - docker-compose stop
+    - docker-compose rm -f
+    - rm -rf /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+  when: manual
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    action: stop
+  tags:
+    - tedy.nibor.me
