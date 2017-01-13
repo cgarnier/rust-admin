@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "events": "^1.1.1",
+    "ionicons": "^2.0.1",
     "moment": "^2.17.1",
     "vue": "^2.1.0",
     "vue-router": "^2.1.1"

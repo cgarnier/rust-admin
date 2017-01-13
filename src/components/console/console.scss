@@ -2,8 +2,12 @@ $warning: #cc8022;
 $log: #7d7d7d;
 .console {
   .logs-container {
-    height: calc(100vh - 96px);
+    height: calc(100% - 40px);
+    width: 100%;
+    overflow: scroll;
+    overflow-x: scroll;
     .logs {
+      min-height: 100%;
       color: rgb(196, 196, 196);
       background-color: #0c0c0c;
       padding-left: 8px;
@@ -23,7 +27,7 @@ $log: #7d7d7d;
         }
         .message {
           flex: auto;
-          white-space: pre;
+          white-space: pre-wrap;
         }
 
         &.Warning-log {
@@ -34,7 +38,6 @@ $log: #7d7d7d;
         }
       }
     }
-    overflow: scroll;
   }
   .console-input {
     form {
