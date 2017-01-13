@@ -1,13 +1,7 @@
 <template>
   <div id="app">
-    <div v-if="!loggedIn && !restoreSession" class="login">
-      <div class="login-form">
-        <form @submit.prevent="login">
-          <input v-model="address" type="text" name="address" placeholder="Rcon address">
-          <input v-model="password" type="password" name="address" placeholder="Rcon password">
-          <button type="submit">Login</button>
-        </form>
-      </div>
+    <div v-if="!loggedIn" class="login">
+      <login @login="login"></login>
     </div>
     <div v-if="loggedIn" class="the-app">
       <header>
@@ -30,20 +24,19 @@
   import SideMenu from 'components/side-menu/SideMenu.vue'
   import LoginService from './services/LoginService'
   import EventHub from './services/EventHub'
+  import Login from 'components/login/Login.vue'
   import './app.scss'
   export default {
     name: 'app',
     data () {
       return {
-        loggedIn: false,
-        address: '',
-        password: '',
-        restoreSession: true
+        loggedIn: false
       }
     },
     components: {
       Topbar,
-      SideMenu
+      SideMenu,
+      Login
     },
     mounted () {
       EventHub.$on('logout', () => {
@@ -53,15 +46,15 @@
         .then(() => {
           this.loggedIn = true
         })
-        .catch(() => {
-          this.restoreSession = false
-        })
     },
     methods: {
-      login () {
-        LoginService.login(this.address, this.password)
+      login (data) {
+        LoginService.login(data.address, data.password)
           .then(() => {
             this.loggedIn = true
+          })
+          .catch(() => {
+            console.log('Cannot restore last session!')
           })
       }
     }
