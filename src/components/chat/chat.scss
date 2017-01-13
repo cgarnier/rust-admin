@@ -1,8 +1,9 @@
 $log: #7d7d7d;
 .chat {
   .chat-wrapper {
-    height: calc(100vh - 96px);
+    height: 100%;
     .chat-content {
+      min-height: 100%;
       color: rgb(196, 196, 196);
       background-color: #0c0c0c;
       padding-left: 8px;
@@ -22,6 +23,7 @@ $log: #7d7d7d;
         }
         .message {
           flex: auto;
+          white-space: pre-wrap;
         }
       }
     }

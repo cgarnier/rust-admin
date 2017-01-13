@@ -1,20 +1,38 @@
 <template>
   <div class="server-info">
-    <div class="expanded row">
-      <div class="column small-12">
-        <h2>{{hostname}}</h2>
+    <div class="tiles row">
+      <div class="column small-6 large-4">
+        <stats-tile class="aqua" name="Players" :value="players" icon="ion-person-stalker"></stats-tile>
+      </div>
+      <div class="column small-6 large-4">
+        <stats-tile class="green" name="Joining" :value="joining" icon="ion-person-stalker"></stats-tile>
+      </div>
+      <div class="column small-6 large-4">
+        <stats-tile class="orange" name="Queued" :value="queued" icon="ion-person-stalker"></stats-tile>
+      </div>
+      <div class="column small-6 large-4">
+        <stats-tile class="red" name="Entities" :value="entityCount" icon="ion-trash-b"></stats-tile>
+      </div>
+      <div class="column small-6 large-4">
+        <stats-tile class="aqua" name="In game time" :value="gameTime" icon="ion-clock"></stats-tile>
+      </div>
+      <div class="column small-6 large-4">
+        <stats-tile class="green" name="Map" :value="map" icon="ion-map"></stats-tile>
+      </div>
+      <div class="column small-6 large-4">
+        <stats-tile class="orange" name="FPS" :value="framerate" icon="ion-arrow-graph-up-right"></stats-tile>
+      </div>
+      <div class="column small-6 large-4">
+        <stats-tile class="red" name="Up time" :value="upTime" icon="ion-clock"></stats-tile>
+      </div>
+      <div class="column small-6 large-4">
+        <stats-tile class="aqua" name="Memory" :value="memory" icon="ion-arrow-graph-up-right"></stats-tile>
       </div>
     </div>
-    <div class="tiles">
-      <stats-tile name="Players" :value="players"></stats-tile>
-      <stats-tile name="Joining" :value="joining"></stats-tile>
-      <stats-tile name="Queued" :value="queued"></stats-tile>
-      <stats-tile name="Entities" :value="entityCount"></stats-tile>
-      <stats-tile name="In game time" :value="gameTime"></stats-tile>
-      <stats-tile name="Map" :value="map"></stats-tile>
-      <stats-tile name="FPS" :value="framerate"></stats-tile>
-      <stats-tile name="Up time" :value="upTime"></stats-tile>
-      <stats-tile name="Memory" :value="memory"></stats-tile>
+    <div class="row">
+      <div class="column small-12">
+        <h5>{{hostname}}</h5>
+      </div>
     </div>
   </div>
 </template>
@@ -51,7 +69,7 @@
         this.joining = data.Joining
         this.entityCount = data.EntityCount
         this.upTime = uptime.format('DDD') + ' days ' + uptime
-          .format('HH:mm')
+            .format('HH:mm')
         this.gameTime = moment(data.GameTime).format('HH:mm:ss')
         this.map = data.Map
         this.framerate = data.Framerate
