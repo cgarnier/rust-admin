@@ -21,7 +21,8 @@
   export default {
     data () {
       return {
-        name: 'ok'
+        name: 'ok',
+        players: 0
       }
     },
     methods: {

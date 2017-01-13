@@ -23,6 +23,9 @@ class ServerInfosService {
    * @returns {Promise.<TResult>}
    */
   infos () {
+    if (!RconService.isConnected()) {
+      return Promise.resolve({})
+    }
     return RconService.request('serverinfo')
       .then((res) => {
         return res.Message
