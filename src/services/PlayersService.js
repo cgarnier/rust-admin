@@ -22,6 +22,50 @@ class PlayersService {
     ])
   }
 
+  /**
+   * Get a player form its SteamId
+   * @param id SteamID
+   */
+  get (id) {
+    return this.list()
+      .then(res => {
+        console.log('res ', res)
+        let player = res.find(p => p.SteamID === id)
+        if (!player) {
+          throw new Error('Player is not connected')
+        }
+        return player
+      })
+  }
+
+  /**
+   * Kick a player
+   * @param id SteamID
+   * @param reason a reason
+   * @returns {Promise.<TResult>}
+   */
+  kick (id, reason) {
+    reason = reason || ''
+    return RconService.request(`global.kick "${id}" "${reason}"`)
+      .then(res => {
+        return res.Message
+      })
+  }
+
+  /**
+   * Ban a player
+   * @param id SteamID
+   * @param reason a reason
+   * @returns {Promise.<TResult>}
+   */
+  ban (id, reason) {
+    reason = reason || ''
+    return RconService.request(`global.kick "${id}" "${reason}"`)
+      .then(res => {
+        return res.Message
+      })
+  }
+
   inGame () {
     return RconService.request('players')
       .then(res => {

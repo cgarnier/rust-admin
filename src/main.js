@@ -8,6 +8,8 @@ import ConsolePage from 'components/console-page/ConsolePage.vue'
 import PlayersPage from 'components/players-page/PlayersPage.vue'
 import ChatPage from 'components/chat-page/ChatPage.vue'
 import MapPage from 'components/map-page/MapPage.vue'
+import PlayerPage from 'components/player-page/PlayerPage.vue'
+
 Vue.use(VueRouter)
 const routes = [
   {
@@ -29,6 +31,11 @@ const routes = [
     name: 'players',
     path: '/players',
     component: PlayersPage
+  },
+  {
+    name: 'player',
+    path: '/players/:id',
+    component: PlayerPage
   },
   {
     name: 'console',

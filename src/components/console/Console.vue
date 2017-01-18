@@ -10,7 +10,7 @@
         <div ref="bottom"></div>
       </div>
     </div>
-    <div class="console-input">
+    <div class="console-input" v-if="!readOnly">
       <form @submit.prevent="submit">
         <input type="text" v-model="input" @keyup="handleKeyUp" @change="handleChange">
         <button class="button" type="submit">Send</button>
@@ -24,9 +24,15 @@
   import './console.scss'
   import Vue from 'vue'
   export default {
+    props: {
+      logs: Array,
+      readOnly: {
+        type: Boolean,
+        default: () => false
+      }
+    },
     data () {
       return {
-        logs: [],
         commandsHistory: [],
         historyIndex: 0,
         commandList: [''],
@@ -34,11 +40,6 @@
       }
     },
     mounted () {
-      ConsoleService.tail(1024)
-        .then((res) => {
-          this.logs = res
-        })
-      ConsoleService.on(this.handleMessage)
     },
     methods: {
       submit () {
@@ -46,12 +47,6 @@
         this.commandList[0] = this.input
         this.commandList.unshift('')
         this.input = ''
-      },
-      handleMessage (data) {
-        if (!data.Time) {
-          data.Time = moment()
-        }
-        this.logs.push(data)
       },
       handleChange () {
         console.log('change,', this.commandList)
