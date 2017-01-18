@@ -1,4 +1,30 @@
-# rust-shop
+# rust-admin
+
+Rust server admin web interface. Full front interface, no backend server.
+
+Similar to [Facepunch](https://github.com/Facepunch) [webrcon](https://github.com/Facepunch/webrcon/tree/master) project.
+
+[View the demo](https://rust-admin.nibor.me).
+
+# Features
+
+* server details
+* chat
+* console
+* player list
+* player detail
+
+# How to use
+
+## Using docker
+
+```
+docker run -d --name rust-admin -p 80:80 gitlab.nibor.me:4567/arcandiers/rust-admin:latest
+```
+
+Then visit [http://localhost](http://localhost).
+
+# Contribute
 
 > A Vue.js project
 
