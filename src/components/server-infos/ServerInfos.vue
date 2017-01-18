@@ -40,6 +40,7 @@
   import ServerInfosService from '../../services/ServerInfosService'
   import StatsTile from '../stats-tile/StatsTile.vue'
   import moment from 'moment'
+  import Utils from '../../services/Utils'
   import './server-info.scss'
   export default {
     data () {
@@ -61,15 +62,12 @@
     },
     methods: {
       handleInfo (data) {
-        let uptime = moment.utc(moment(new Date())
-          .diff(moment(new Date((new Date().getTime()) - (data.Uptime * 1000)))))
         this.hostname = data.Hostname
         this.players = `${data.Players} / ${data.MaxPlayers}`
         this.queued = data.Queued
         this.joining = data.Joining
         this.entityCount = data.EntityCount
-        this.upTime = uptime.format('DDD') + ' days ' + uptime
-            .format('HH:mm')
+        this.upTime = Utils.formatDuration(data.Uptime)
         this.gameTime = moment(data.GameTime).format('HH:mm:ss')
         this.map = data.Map
         this.framerate = data.Framerate
