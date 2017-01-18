@@ -29,11 +29,6 @@
         <stats-tile class="aqua" name="Memory" :value="memory" icon="ion-arrow-graph-up-right"></stats-tile>
       </div>
     </div>
-    <div class="row">
-      <div class="column small-12">
-        <h5>{{hostname}}</h5>
-      </div>
-    </div>
   </div>
 </template>
 <script type="text/babel">
