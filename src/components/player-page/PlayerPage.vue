@@ -15,25 +15,25 @@
       </div>
       <div class="tiles row">
         <div class="column small-6 large-4">
-          <stats-tile v-if="isConnected" class="aqua" name="Violation Level" :value="player.VoiationLevel" icon="ion-person-stalker"></stats-tile>
+          <stats-tile v-if="isConnected" class="aqua" name="Violation Level" :value="player.VoiationLevel" icon="ion-alert-circled"></stats-tile>
         </div>
         <div class="column small-6 large-4">
-          <stats-tile v-if="isConnected" class="green" name="IP Address" :value="ip(player.Address)" icon="ion-person-stalker"></stats-tile>
+          <stats-tile v-if="isConnected" class="green" name="IP Address" :value="ip(player.Address)" icon="ion-wifi"></stats-tile>
         </div>
         <div class="column small-6 large-4">
-          <stats-tile v-if="isConnected" class="red" name="Duration" :value="duration(player.ConnectedSeconds)" icon="ion-person-stalker"></stats-tile>
+          <stats-tile v-if="isConnected" class="red" name="Duration" :value="duration(player.ConnectedSeconds)" icon="ion-clock"></stats-tile>
         </div>
         <div class="column small-6 large-4">
-          <stats-tile v-if="isConnected" class="orange" name="Health" :value="player.Health" icon="ion-person-stalker"></stats-tile>
+          <stats-tile v-if="isConnected" class="orange" name="Health" :value="player.Health" icon="ion-heart"></stats-tile>
         </div>
         <div class="column small-6 large-4">
-          <stats-tile v-if="isConnected" class="aqua" name="Ping" :value="player.Ping" icon="ion-person-stalker"></stats-tile>
+          <stats-tile v-if="isConnected" class="aqua" name="Ping" :value="player.Ping" icon="ion-connection-bars"></stats-tile>
         </div>
         <div class="column small-6 large-4">
-          <stats-tile v-if="isConnected" class="green" name="Level" :value="player.CurrentLevel" icon="ion-person-stalker"></stats-tile>
+          <stats-tile v-if="isConnected" class="green" name="Level" :value="player.CurrentLevel" icon="ion-arrow-up-a"></stats-tile>
         </div>
         <div class="column small-6 large-4">
-          <stats-tile v-if="isConnected" class="red" name="XP" :value="player.UnspentXp" icon="ion-person-stalker"></stats-tile>
+          <stats-tile v-if="isConnected" class="red" name="XP" :value="player.UnspentXp" icon="ion-plus-round"></stats-tile>
         </div>
       </div>
 
