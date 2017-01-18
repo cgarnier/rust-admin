@@ -1,0 +1,4126 @@
+[
+  {
+    "shortname": "rifle.ak",
+    "name": "Assault Rifle",
+    "description": "High damage machine rifle.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.1333,
+        "reloadTime": 4.4,
+        "magazineSize": 30,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.handmade.shell",
+    "name": "Handmade Shell",
+    "description": "Shoddy ammo with multiple projectiles.",
+    "maxStack": 64,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.pistol",
+    "name": "Pistol Bullet",
+    "description": "Ammunition for a Pistol.",
+    "maxStack": 64,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.pistol.fire",
+    "name": "Incendiary Pistol Bullet",
+    "description": "Slower moving ammunition that deals fire damage. There's a small chance it will start a fire.",
+    "maxStack": 64,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.pistol.hv",
+    "name": "HV Pistol Ammo",
+    "description": "This ammunition travels faster, resulting in less drop and slightly higher damage.",
+    "maxStack": 64,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.rifle",
+    "name": "5.56 Rifle Ammo",
+    "description": "Ammunition for a Rifle.",
+    "maxStack": 100,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.rifle.explosive",
+    "name": "Explosive 5.56 Rifle Ammo",
+    "description": "This ammo explodes on contact dealing a small amount of fragmentation damage to nearby objects.",
+    "maxStack": 100,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.rifle.incendiary",
+    "name": "Incendiary 5.56 Rifle Ammo",
+    "description": "Slower moving ammunition that deals fire damage. There's a small chance it will start a fire.",
+    "maxStack": 100,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.rifle.hv",
+    "name": "HV 5.56 Rifle Ammo",
+    "description": "This ammunition travels faster, resulting in less drop and slightly higher damage.",
+    "maxStack": 100,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.rocket.basic",
+    "name": "Rocket",
+    "description": "Ammunition for a Rocket Launcher.",
+    "maxStack": 3,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.rocket.fire",
+    "name": "Incendiary Rocket",
+    "description": "Creates flames upon impact.",
+    "maxStack": 3,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.rocket.hv",
+    "name": "High Velocity Rocket",
+    "description": "Fast moving rocket ammunition.",
+    "maxStack": 3,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.shotgun",
+    "name": "12 Gauge Buckshot",
+    "description": "Ammunition for a Shotgun.",
+    "maxStack": 64,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ammo.shotgun.slug",
+    "name": "12 Gauge Slug",
+    "description": "Single large projectile for a Shotgun.",
+    "maxStack": 32,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "antiradpills",
+    "name": "Anti-Radiation Pills",
+    "description": "Taking these pills will lower your radiation level. WARNING: May cause extreme dehydration",
+    "maxStack": 10,
+    "category": "medical",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Removes 25 radiation",
+      "Removes 50 hydration"
+    ]
+  },
+  {
+    "shortname": "apple",
+    "name": "Apple",
+    "description": "An Apple. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 30 calories",
+      "Adds 15 hydration",
+      "Adds 2 health"
+    ]
+  },
+  {
+    "shortname": "apple.spoiled",
+    "name": "Rotten Apple",
+    "description": "A rotten apple. Eating it currently provides a tiny boost to health, hunger, and thirst.",
+    "maxStack": 1,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 15 calories",
+      "Adds 2 hydration",
+      "Adds 2 health"
+    ]
+  },
+  {
+    "shortname": "arrow.hv",
+    "name": "High Velocity Arrow",
+    "description": "Lighter, faster arrow that deals less damage.",
+    "maxStack": 48,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "arrow.wooden",
+    "name": "Wooden Arrow",
+    "description": "An arrow for a Hunting Bow and Crossbow.",
+    "maxStack": 32,
+    "category": "ammunition",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "autoturret",
+    "name": "Auto Turret",
+    "description": "This automated sentry turret will engage and neutralize any moving targets it has line of sight to. You must load it with standard 5.56 ammunition. Note : The turret will search for targets in a 180 degree arc facing *you* when you place it.",
+    "maxStack": 1,
+    "category": "traps",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "axe.salvaged",
+    "name": "Salvaged Axe",
+    "description": "A high-yield resource gathering axe. Slower than the Hatchet.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.25,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "bandage",
+    "name": "Bandage",
+    "description": "Heal yourself or others with this bandage. Left-click heals you, right-click heals a target.",
+    "maxStack": 3,
+    "category": "medical",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Removes 2 poison",
+      "Adds 5 health",
+      "Removes 50 bleeding"
+    ]
+  },
+  {
+    "shortname": "barricade.concrete",
+    "name": "Concrete Barricade",
+    "description": "A barricade made out of Stones.",
+    "maxStack": 10,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "barricade.metal",
+    "name": "Metal Barricade",
+    "description": "A tough metal barricade with barbed wire, made from Metal Fragments. The barbed wire causes damage and will also slow player movement.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "barricade.sandbags",
+    "name": "Sandbag Barricade",
+    "description": "A protective barricade made out of Sand Bags.",
+    "maxStack": 10,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "barricade.stone",
+    "name": "Stone Barricade",
+    "description": "A protective barricade made out of Stones.",
+    "maxStack": 10,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "barricade.wood",
+    "name": "Wooden Barricade",
+    "description": "A wooden barricade. Will hurt players and animals that run into it.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "barricade.woodwire",
+    "name": "Barbed Wooden Barricade",
+    "description": "A wooden barricade with barbed wire, made of Wood and Metal Fragments. The barbed wire causes damage and will also slow player movement.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "battery.small",
+    "name": "Battery - Small",
+    "description": "A Battery.",
+    "maxStack": 1,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "trap.bear",
+    "name": "Snap Trap",
+    "description": "A metal trap that can injure people and animals.",
+    "maxStack": 1,
+    "category": "traps",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "bed",
+    "name": "Bed",
+    "description": "A Bed. Placing this will give you a place to respawn and can be used much more frequently than a sleeping bag. Note: Must be placed inside a building",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "bed": {
+        "type": "bed"
+      }
+    },
+    "descriptions": [
+      "120 second cooldown between respawns. Triggers cooldown on all beds within 50m."
+    ]
+  },
+  {
+    "shortname": "black.raspberries",
+    "name": "Black Raspberries",
+    "description": "Black Raspberries picked from berry bushes. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 1,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 40 calories",
+      "Adds 20 hydration",
+      "Removes 5 poison",
+      "Adds 10 health"
+    ]
+  },
+  {
+    "shortname": "bleach",
+    "name": "Bleach",
+    "description": "A powerful oxidizing agent. Can be used as a disinfectant",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "blood",
+    "name": "Blood",
+    "description": "Used in creation of medkits",
+    "maxStack": 1000,
+    "category": "medical",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "blueberries",
+    "name": "Blueberries",
+    "description": "Blueberries picked from berry bushes. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 30 calories",
+      "Adds 20 hydration",
+      "Removes 5 poison",
+      "Adds 10 health"
+    ]
+  },
+  {
+    "shortname": "blueprintbase",
+    "name": "Blueprint",
+    "description": "Blueprint",
+    "maxStack": 1000,
+    "category": "misc",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "rifle.bolt",
+    "name": "Bolt Action Rifle",
+    "description": "A high powered, highly accurate rifle.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.7,
+        "reloadTime": 5,
+        "magazineSize": 4,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "bone.club",
+    "name": "Bone Club",
+    "description": "A blunt weapon made from a femur. All around basic gathering tool.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.7,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "bone.fragments",
+    "name": "Bone Fragments",
+    "description": "Extracted from animal carcass.  Used as a raw material to make a bone blade, a bone awl, bone meal, or used to make glue.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "botabag",
+    "name": "Bota Bag",
+    "description": "A canteen used to carry Water. Left click to drink, right click to fill from water sources, or to pour out",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "bow.hunting",
+    "name": "Hunting Bow",
+    "description": "A bow. For hunting.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.25,
+        "reloadTime": 1,
+        "magazineSize": 1,
+        "type": "weapon"
+      }
+    },
+    "descriptions": [
+      "10% to break ammo on impact"
+    ]
+  },
+  {
+    "shortname": "box.wooden.large",
+    "name": "Large Wood Box",
+    "description": "Keep your things in this wooden storage box. Stores up to 30 items.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "box.wooden",
+    "name": "Wood Storage Box",
+    "description": "Keep your things in this wooden storage box. Stores up to 12 items.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "bucket.water",
+    "name": "Water Bucket",
+    "description": "A bucket for transporting water or other liquids",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "building.planner",
+    "name": "Building Plan",
+    "description": "A building plan. You can use this to craft buildings",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "burlap.shirt",
+    "name": "Burlap Shirt",
+    "description": "A Shirt made out of burlap.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "burlap.shoes",
+    "name": "Burlap Shoes",
+    "description": "Shoes made out of burlap.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "1 protection from bullets",
+      "1 protection from slash hits",
+      "1 protection from blunt hits",
+      "2 protection from bites",
+      "1 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "4 protection from cold exposure",
+      "1 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "cactusflesh",
+    "name": "Cactus Flesh",
+    "description": "Flesh of a Cactus, contains water.",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 5 calories",
+      "Adds 20 hydration",
+      "Adds 3 health over 0 seconds"
+    ]
+  },
+  {
+    "shortname": "tool.camera",
+    "name": "Camera",
+    "description": "A camera. Take screenshots with primary fire, zoom in and out with secondary fire, and lock focus with third fire.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "campfire",
+    "name": "Camp Fire",
+    "description": "A small camp fire. Provides warmth and light, and you can cook with it.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "oven": {
+        "slots": 5,
+        "allowByproductCreation": true,
+        "temperature": 200,
+        "fuelType": "wood",
+        "type": "oven"
+      }
+    },
+    "descriptions": [
+      "Spawns with 50 Wood",
+      "Can be used for cooking",
+      "Uses 1 Wood every 10 seconds."
+    ]
+  },
+  {
+    "shortname": "can.beans",
+    "name": "Can of Beans",
+    "description": "Beans found as loot. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "50% chance to give Empty Can Of Beans.",
+      "Adds 100 calories",
+      "Adds 25 hydration",
+      "Adds 4 health over 0 seconds"
+    ]
+  },
+  {
+    "shortname": "can.beans.empty",
+    "name": "Empty Can Of Beans",
+    "description": "An empty Can of Beans. Can be smelted into Metal Fragments.",
+    "maxStack": 10,
+    "category": "resources",
+    "meta": {
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Can be cooked for 30 seconds to get x15 Metal Fragments"
+    ]
+  },
+  {
+    "shortname": "can.tuna",
+    "name": "Can of Tuna",
+    "description": "Chunked tuna found as loot. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "50% chance to give Empty Tuna Can.",
+      "Adds 50 calories",
+      "Adds 15 hydration",
+      "Adds 2 health over 0 seconds"
+    ]
+  },
+  {
+    "shortname": "can.tuna.empty",
+    "name": "Empty Tuna Can",
+    "description": "An empty Can of Tuna. Can be smelted into Metal Fragments.",
+    "maxStack": 10,
+    "category": "resources",
+    "meta": {
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Can be cooked for 30 seconds to get x10 Metal Fragments"
+    ]
+  },
+  {
+    "shortname": "candycane",
+    "name": "Candy Cane",
+    "description": "A Festive Candy Cane",
+    "maxStack": 1,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 350 calories",
+      "Adds 5 hydration",
+      "Adds 15 health over 0 seconds"
+    ]
+  },
+  {
+    "shortname": "cctv.camera",
+    "name": "CCTV Camera",
+    "description": "A somewhat broken CCTV camera, Unusable in its current form",
+    "maxStack": 1,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "ceilinglight",
+    "name": "Ceiling Light",
+    "description": "A small ceiling mounted light source.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "oven": {
+        "slots": 1,
+        "allowByproductCreation": false,
+        "temperature": 50,
+        "fuelType": "lowgradefuel",
+        "type": "oven"
+      }
+    },
+    "descriptions": [
+      "Spawns with 15 Low Grade Fuel",
+      "Can be used for warming",
+      "Uses 1 Low Grade Fuel every 600 seconds."
+    ]
+  },
+  {
+    "shortname": "charcoal",
+    "name": "Charcoal",
+    "description": "Charcoal from a fire.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "chicken.burned",
+    "name": "Burned Chicken",
+    "description": "Burned chicken. Eating it will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 10 calories",
+      "Adds 2 hydration",
+      "Adds 20 poison",
+      "Adds 2 health"
+    ]
+  },
+  {
+    "shortname": "chicken.cooked",
+    "name": "Cooked Chicken.",
+    "description": "Cooked chicken. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 40 calories",
+      "Adds 3 hydration",
+      "Adds 10 health over 0 seconds",
+      "Can be cooked for 60 seconds to get x1 Burned Chicken"
+    ]
+  },
+  {
+    "shortname": "chicken.raw",
+    "name": "Raw Chicken Breast",
+    "description": "Raw chicken breast. Eating it will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 20 calories",
+      "Adds 5 hydration",
+      "Adds 10 poison",
+      "Adds 5 health",
+      "Can be cooked for 30 seconds to get x1 Cooked Chicken."
+    ]
+  },
+  {
+    "shortname": "chicken.spoiled",
+    "name": "Spoiled Chicken",
+    "description": "Spoiled Chicken. Eating it will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 10 calories",
+      "Adds 2 hydration",
+      "Adds 10 poison"
+    ]
+  },
+  {
+    "shortname": "chocholate",
+    "name": "Chocolate Bar",
+    "description": "Chocolate Bar found as loot. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 100 calories",
+      "Adds 1 hydration",
+      "Adds 2 health over 0 seconds"
+    ]
+  },
+  {
+    "shortname": "cloth",
+    "name": "Cloth",
+    "description": "Cloth from an animal or a Hemp Bush. Used in many clothing items, weapons, and more.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "coal",
+    "name": "Coal :(",
+    "description": "Crappy Holidays!",
+    "maxStack": 1,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "corn",
+    "name": "Corn",
+    "description": "An ear of corn. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 1,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "50% chance to give Corn Seed.",
+      "Adds 40 calories",
+      "Adds 5 hydration",
+      "Adds 6 health over 30 seconds"
+    ]
+  },
+  {
+    "shortname": "seed.corn",
+    "name": "Corn Seed",
+    "description": "Seeds can be eaten or planted.",
+    "maxStack": 50,
+    "category": "food",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "crossbow",
+    "name": "Crossbow",
+    "description": "A very accurate ranged weapon.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1,
+        "reloadTime": 4.5,
+        "magazineSize": 1,
+        "type": "weapon"
+      }
+    },
+    "descriptions": [
+      "10% to break ammo on impact"
+    ]
+  },
+  {
+    "shortname": "crude.oil",
+    "name": "Crude Oil",
+    "description": "Raw Oil out of the ground, must be refined in a refinery to be used.",
+    "maxStack": 500,
+    "category": "resources",
+    "meta": {
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Can be cooked for 10 seconds to get x3 Low Grade Fuel"
+    ]
+  },
+  {
+    "shortname": "cupboard.tool",
+    "name": "Tool Cupboard",
+    "description": "Placing and authorising with the cupboard will make it so only you can build in a 50 meter radius of it. If you want your friends to build, they'll need to auth too. You should protect this.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "door.double.hinged.metal",
+    "name": "Sheet Metal Double Door",
+    "description": "A hinged double door which is made out of sheets of metal and wood",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "door.double.hinged.toptier",
+    "name": "Armored Double Door",
+    "description": "A hinged double door which is made out of armored metal",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "door.double.hinged.wood",
+    "name": "Wood Double Door",
+    "description": "A hinged double door which is made out of wood",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "door.hinged.metal",
+    "name": "Sheet Metal Door",
+    "description": "A hinged door which is made out of sheets of metal and wood",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "door.hinged.toptier",
+    "name": "Armored Door",
+    "description": "A hinged door which is made out of reinforced metal and wood",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "door.hinged.wood",
+    "name": "Wooden Door",
+    "description": "A hinged door which is made out of wood",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "door.key",
+    "name": "Door Key",
+    "description": "A key to a door, created from a Lock.",
+    "maxStack": 1,
+    "category": "misc",
+    "meta": {
+      "burnable": {
+        "fuelAmount": 10,
+        "byproductAmount": 1,
+        "byproductChance": 0,
+        "byproductItem": "charcoal",
+        "type": "burnable"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "ducttape",
+    "name": "Duct Tape",
+    "description": "A versatile adhesive tape reinforced with cloth",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "explosive.satchel",
+    "name": "Satchel Charge",
+    "description": "Small explosive package constructed of beancan grenades. Useful for destroying wood and sheet metal doors",
+    "maxStack": 10,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "explosive.timed",
+    "name": "Timed Explosive Charge",
+    "description": "C4, useful for breaking into bases.",
+    "maxStack": 10,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "explosives",
+    "name": "Explosives",
+    "description": "Explosives, a component of C4.",
+    "maxStack": 100,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "fat.animal",
+    "name": "Animal Fat",
+    "description": "Fat from an animal.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "fish.cooked",
+    "name": "Cooked Fish",
+    "description": "Cooked Fish. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 40 calories",
+      "Adds 10 hydration",
+      "Adds 3 health over 0 seconds",
+      "Can be cooked for 60 seconds to get x1 Charcoal"
+    ]
+  },
+  {
+    "shortname": "fish.raw",
+    "name": "Raw Fish",
+    "description": "Raw Fish",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 5 calories",
+      "Adds 1 hydration",
+      "Can be cooked for 20 seconds to get x1 Cooked Fish"
+    ]
+  },
+  {
+    "shortname": "flamethrower",
+    "name": "Flame Thrower",
+    "description": "A Flamethrower. Uses low grade fuel as ammunition",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "flare",
+    "name": "Flare",
+    "description": "Light up the night sky with this brand new red flare!",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "weapon.mod.flashlight",
+    "name": "Weapon Flashlight",
+    "description": "Weapon flashlight",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "floor.grill",
+    "name": "A floor grill",
+    "description": "A floor grill",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "floor.ladder.hatch",
+    "name": "Ladder Hatch",
+    "description": "A hatch that opens and changes into a ladder",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "lowgradefuel",
+    "name": "Low Grade Fuel",
+    "description": "Low Grade Fuel, used to power light sources",
+    "maxStack": 500,
+    "category": "resources",
+    "meta": {
+      "burnable": {
+        "fuelAmount": 150,
+        "byproductAmount": 1,
+        "byproductChance": 1,
+        "byproductItem": null,
+        "type": "burnable"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "furnace",
+    "name": "Furnace",
+    "description": "A Furnace. Use it to smelt mined ore.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "oven": {
+        "slots": 6,
+        "allowByproductCreation": true,
+        "temperature": 1000,
+        "fuelType": "wood",
+        "type": "oven"
+      }
+    },
+    "descriptions": [
+      "Spawns with 100 Wood",
+      "Can be used for smelting",
+      "Uses 1 Wood every 2 seconds."
+    ]
+  },
+  {
+    "shortname": "furnace.large",
+    "name": "Large Furnace",
+    "description": "A Large Furnace.Use it to smelt ore.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "oven": {
+        "slots": 18,
+        "allowByproductCreation": true,
+        "temperature": 1000,
+        "fuelType": "wood",
+        "type": "oven"
+      }
+    },
+    "descriptions": [
+      "Spawns with 100 Wood",
+      "Can be used for smelting",
+      "Uses 1 Wood every 2 seconds."
+    ]
+  },
+  {
+    "shortname": "gates.external.high.stone",
+    "name": "High External Stone Gate",
+    "description": "A high stone gate, allowing access in and out of your compound",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "gates.external.high.wood",
+    "name": "High External Wooden Gate",
+    "description": "A high wooden gate, allowing access in and out of your compound",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "gears",
+    "name": "Gears",
+    "description": "A selection of gears. Some functional, some not.",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "burlap.gloves",
+    "name": "Leather Gloves",
+    "description": "Gloves made out of burlap.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "1 protection from bullets",
+      "1 protection from slash hits",
+      "1 protection from blunt hits",
+      "2 protection from bites",
+      "1 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "4 protection from cold exposure",
+      "1 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "glue",
+    "name": "Glue",
+    "description": "A strong adhesive",
+    "maxStack": 10,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "granolabar",
+    "name": "Granola Bar",
+    "description": "Granola Bar found as loot. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 60 calories",
+      "Adds 5 health over 0 seconds"
+    ]
+  },
+  {
+    "shortname": "grenade.beancan",
+    "name": "Beancan Grenade",
+    "description": "Unreliable explosive device.",
+    "maxStack": 5,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "grenade.f1",
+    "name": "F1 Grenade",
+    "description": "Reliable explosive device.",
+    "maxStack": 5,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "fun.guitar",
+    "name": "Acoustic Guitar",
+    "description": "A type of instrument. Play with primary and secondary fire. Change your view angle to alter the pitch.",
+    "maxStack": 1,
+    "category": "misc",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "gunpowder",
+    "name": "Gun Powder",
+    "description": "Made from Sulphur and Charcoal.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "attire.hide.helterneck",
+    "name": "Hide Halterneck",
+    "description": "A Halterneck made from the hide of an animal.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "hammer",
+    "name": "Hammer",
+    "description": "A Hammer, used to upgrade building materials. Right-click for the options.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.5,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "hammer.salvaged",
+    "name": "Salvaged Hammer",
+    "description": "A Hammer made from a bunch of other crap.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "hat.beenie",
+    "name": "Beenie Hat",
+    "description": "A wooly hat.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.2 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "hat.boonie",
+    "name": "Boonie Hat",
+    "description": "A boonie hat",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.2 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "bucket.helmet",
+    "name": "Bucket Helmet",
+    "description": "A Bucket Helmet. It provides a level of regional protection from inflicted damage.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "6 protection from bullets",
+      "16 protection from slash hits",
+      "16 protection from blunt hits",
+      "16 protection from bites",
+      "16 protection from stab hits",
+      "16 protection from explosions",
+      "0.8 protection from radiation exposure",
+      "7 protection from cold exposure",
+      "6 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "burlap.headwrap",
+    "name": "Burlap Headwrap",
+    "description": "A Headwrap made out of burlap.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "3 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "4 protection from bites",
+      "3 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "hat.candle",
+    "name": "Candle Hat",
+    "description": "A hat with a candle on top. You can turn the candle on in your inventory.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "hat.cap",
+    "name": "Baseball Cap",
+    "description": "A baseball cap.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.2 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "coffeecan.helmet",
+    "name": "Coffee Can Helmet",
+    "description": "A Coffee Can Helmet. It provides a level of regional protection from inflicted damage.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "7 protection from bullets",
+      "10 protection from slash hits",
+      "10 protection from blunt hits",
+      "10 protection from bites",
+      "10 protection from stab hits",
+      "10 protection from explosions",
+      "1 protection from radiation exposure",
+      "7 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "deer.skull.mask",
+    "name": "Bone Helmet",
+    "description": "A helmet made of bone",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "5 protection from heat",
+      "5 protection from bullets",
+      "8 protection from slash hits",
+      "8 protection from blunt hits",
+      "16 protection from bites",
+      "8 protection from stab hits",
+      "8 protection from explosions",
+      "0.8 protection from radiation exposure",
+      "4 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "hat.miner",
+    "name": "Miners Hat",
+    "description": "A leather cap with a flashlight attached. It uses Low Grade Fuel and can be activated from the inventory.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.2 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "riot.helmet",
+    "name": "Riot Helmet",
+    "description": "A makeshift riot Helmet. Great at deflecting melee attacks.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "6 protection from bullets",
+      "16 protection from slash hits",
+      "16 protection from blunt hits",
+      "16 protection from bites",
+      "16 protection from stab hits",
+      "16 protection from explosions",
+      "0.8 protection from radiation exposure",
+      "7 protection from cold exposure",
+      "6 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "hat.wolf",
+    "name": "Wolf Headdress",
+    "description": "A headdress made out of the scraped out head of a wolf.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "6 protection from bullets",
+      "16 protection from slash hits",
+      "16 protection from blunt hits",
+      "16 protection from bites",
+      "16 protection from stab hits",
+      "16 protection from explosions",
+      "0.8 protection from radiation exposure",
+      "7 protection from cold exposure",
+      "6 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "hatchet",
+    "name": "Hatchet",
+    "description": "A Hatchet, useful for chopping trees and dismembering corpses.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.9,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "hazmat.boots",
+    "name": "Hazmat Boots",
+    "description": "Boots made from radiation resistant rubber.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bites",
+      "2 protection from radiation exposure",
+      "10 protection from cold exposure"
+    ]
+  },
+  {
+    "shortname": "hazmat.gloves",
+    "name": "Hazmat Gloves",
+    "description": "Gloves made from radiation resistant rubber.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bites",
+      "2 protection from radiation exposure",
+      "10 protection from cold exposure"
+    ]
+  },
+  {
+    "shortname": "hazmat.helmet",
+    "name": "Hazmat Helmet",
+    "description": "A Helmet.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from radiation exposure",
+      "10 protection from cold exposure"
+    ]
+  },
+  {
+    "shortname": "hazmat.jacket",
+    "name": "Hazmat Jacket",
+    "description": "A Jacket made from radiation resistant rubber.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "4 protection from bites",
+      "2 protection from radiation exposure",
+      "10 protection from cold exposure"
+    ]
+  },
+  {
+    "shortname": "hazmat.pants",
+    "name": "Hazmat Pants",
+    "description": "Trousers made from radiation resistant rubber.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "4 protection from bites",
+      "2 protection from radiation exposure",
+      "10 protection from cold exposure"
+    ]
+  },
+  {
+    "shortname": "hazmatsuit",
+    "name": "Hazmat Suit",
+    "description": "A hazmat suit made from radiation resistant rubber.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "10 protection from cold",
+      "6 protection from bullets",
+      "6 protection from slash hits",
+      "6 protection from blunt hits",
+      "10 protection from bites",
+      "6 protection from stab hits",
+      "6 protection from explosions",
+      "14 protection from radiation exposure",
+      "10 protection from cold exposure",
+      "6 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "seed.hemp",
+    "name": "Hemp Seed",
+    "description": "Seeds can be eaten or planted.",
+    "maxStack": 50,
+    "category": "food",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "attire.hide.boots",
+    "name": "Hide Boots",
+    "description": "Boots made from the hide of an animal.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "1 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "1 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "6 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "attire.hide.skirt",
+    "name": "Hide Skirt",
+    "description": "A Skirt made from the hide of an animal.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "attire.hide.vest",
+    "name": "Hide Vest",
+    "description": "A Vest made from the hide of an animal.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "9 protection from bites",
+      "2 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "6 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "weapon.mod.holosight",
+    "name": "Holosight",
+    "description": "Uses laser projection to create a holographic sight which is always pointing at the target regardless of view angle.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "hoodie",
+    "name": "Hoodie",
+    "description": "A hoodie.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "3 protection from bullets",
+      "4 protection from slash hits",
+      "4 protection from blunt hits",
+      "7 protection from bites",
+      "3 protection from stab hits",
+      "1 protection from radiation exposure",
+      "10 protection from cold exposure",
+      "4 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "hq.metal.ore",
+    "name": "High Quality Metal Ore",
+    "description": "A rock containing High Quality Metal. Can be smelted in a furnace.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Can be cooked for 20 seconds to get x1 High Quality Metal"
+    ]
+  },
+  {
+    "shortname": "humanmeat.burned",
+    "name": "Burned Human Meat",
+    "description": "Burned Meat from a human being. Consuming will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 6 calories",
+      "Adds 2 hydration",
+      "Adds 20 poison",
+      "Adds 2 health"
+    ]
+  },
+  {
+    "shortname": "humanmeat.cooked",
+    "name": "Cooked Human Meat",
+    "description": "Meat from a human being. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 30 calories",
+      "Removes 30 hydration",
+      "Adds 2 health over 0 seconds",
+      "Can be cooked for 60 seconds to get x1 Burned Human Meat"
+    ]
+  },
+  {
+    "shortname": "humanmeat.raw",
+    "name": "Raw Human Meat",
+    "description": "Raw human meat. Consuming will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 5 calories",
+      "Removes 3 hydration",
+      "Adds 10 poison",
+      "Adds 2 health",
+      "Can be cooked for 30 seconds to get x1 Cooked Human Meat"
+    ]
+  },
+  {
+    "shortname": "humanmeat.spoiled",
+    "name": "Spoiled Human Meat",
+    "description": "Spoiled Human Meat. Consuming will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 10 calories",
+      "Adds 2 hydration",
+      "Adds 10 poison"
+    ]
+  },
+  {
+    "shortname": "icepick.salvaged",
+    "name": "Salvaged Icepick",
+    "description": "A salvaged Icepick.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.25,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "bone.armor.suit",
+    "name": "Bone Armor",
+    "description": "A suit of armor made of bones",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "5 protection from heat",
+      "5 protection from bullets",
+      "8 protection from slash hits",
+      "8 protection from blunt hits",
+      "16 protection from bites",
+      "8 protection from stab hits",
+      "8 protection from explosions",
+      "0.8 protection from radiation exposure",
+      "4 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "jacket.snow",
+    "name": "Snow Jacket - Red",
+    "description": "A thick, high visibility Jacket. It will help keep you warm in any climate.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "2 protection from radiation",
+      "6 protection from bites",
+      "2 protection from stab hits",
+      "1 protection from radiation exposure",
+      "20 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "jacket",
+    "name": "Jacket",
+    "description": "A rugged jacket.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "3 protection from bullets",
+      "5 protection from slash hits",
+      "5 protection from blunt hits",
+      "4 protection from radiation",
+      "8 protection from bites",
+      "4 protection from stab hits",
+      "1 protection from radiation exposure",
+      "12 protection from cold exposure",
+      "5 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "jackolantern.angry",
+    "name": "Jack O Lantern Angry",
+    "description": "A Lantern. Place it where you need light.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "oven": {
+        "slots": 1,
+        "allowByproductCreation": false,
+        "temperature": 50,
+        "fuelType": null,
+        "type": "oven"
+      }
+    },
+    "descriptions": [
+      "Spawns with 1 Wood",
+      "Can be used for warming"
+    ]
+  },
+  {
+    "shortname": "jackolantern.happy",
+    "name": "Jack O Lantern Happy",
+    "description": "A Lantern. Place it where you need light.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "oven": {
+        "slots": 1,
+        "allowByproductCreation": false,
+        "temperature": 50,
+        "fuelType": null,
+        "type": "oven"
+      }
+    },
+    "descriptions": [
+      "Spawns with 1 Wood",
+      "Can be used for warming"
+    ]
+  },
+  {
+    "shortname": "knife.bone",
+    "name": "Bone Knife",
+    "description": "Melee weapon crafted from bone and wood. Best in class at harvesting flesh.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.7,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "ladder.wooden.wall",
+    "name": "Wooden Ladder",
+    "description": "A ladder will help you climb walls in any base.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "trap.landmine",
+    "name": "Land Mine",
+    "description": "An old military Landmine. If you stand on one, you can ask a friend to disarm it before it explodes.",
+    "maxStack": 5,
+    "category": "traps",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "lantern",
+    "name": "Lantern",
+    "description": "A Lantern. Place it where you need light.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "oven": {
+        "slots": 1,
+        "allowByproductCreation": false,
+        "temperature": 50,
+        "fuelType": "lowgradefuel",
+        "type": "oven"
+      }
+    },
+    "descriptions": [
+      "Spawns with 5 Low Grade Fuel",
+      "Can be used for warming",
+      "Uses 1 Low Grade Fuel every 600 seconds."
+    ]
+  },
+  {
+    "shortname": "largemedkit",
+    "name": "Large Medkit",
+    "description": "A large medkit.",
+    "maxStack": 1,
+    "category": "medical",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Removes 10 poison",
+      "Adds 100 health over 0 seconds",
+      "Removes 100 bleeding"
+    ]
+  },
+  {
+    "shortname": "weapon.mod.lasersight",
+    "name": "Weapon Lasersight",
+    "description": "Weapon Lasersight",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "leather",
+    "name": "Leather",
+    "description": "Leather from an animal. Used in many clothing items, weapons, and more.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "lock.code",
+    "name": "Code Lock",
+    "description": "An electronic lock. Locked and unlocked with four-digit code.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "lock.key",
+    "name": "Lock",
+    "description": "A Lock that requires a key.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "longsword",
+    "name": "Longsword",
+    "description": "A powerful 2-handed melee weapon with good range and high damage.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 2,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "rifle.lr300",
+    "name": "LR-300 Assault Rifle",
+    "description": "Stalk your enemies with this high powered assault rifle (temp desc)",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.1333,
+        "reloadTime": 4,
+        "magazineSize": 30,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "lmg.m249",
+    "name": "M249",
+    "description": "High damage, high rate of fire, belt fed light machinegun",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.12,
+        "reloadTime": 7.5,
+        "magazineSize": 100,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "pistol.m92",
+    "name": "M92 Pistol",
+    "description": "A semi-automatic Pistol. Fires rapidly and with good accuracy. Military Grade",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.1,
+        "reloadTime": 2.2,
+        "magazineSize": 15,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "mace",
+    "name": "Mace",
+    "description": "A powerful 2-handed melee weapon, It's unique design makes it easier to hit your target when compared to other more traditional weapons.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 2,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "machete",
+    "name": "Machete",
+    "description": "A brutal weapon with good range.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "map",
+    "name": "Paper Map",
+    "description": "Helps you figure out where you are. You can annotate the map by right-clicking and drawing on it.\r\n\r\nDrag the map into your belt bar to make it active. You will then be able to view the map by holding down the map button (G by default).",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "mask.balaclava",
+    "name": "Improvised Balaclava",
+    "description": "A home made balaclava",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "3 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "4 protection from bites",
+      "3 protection from stab hits",
+      "4 protection from explosions",
+      "0.6 protection from radiation exposure",
+      "16 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "mask.bandana",
+    "name": "Bandana Mask",
+    "description": "A square of cloth which is tied around the face over the nose and mouth.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "metal.facemask",
+    "name": "Metal Facemask",
+    "description": "A protective facemask that deflects direct attacks.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "10 protection from bullets",
+      "14 protection from slash hits",
+      "14 protection from blunt hits",
+      "10 protection from bites",
+      "14 protection from stab hits",
+      "10 protection from explosions",
+      "10 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "bearmeat.burned",
+    "name": "Burnt Bear Meat",
+    "description": "Bear Meat that has been overcooked",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 5 calories",
+      "Adds 1 hydration",
+      "Adds 20 poison"
+    ]
+  },
+  {
+    "shortname": "bearmeat.cooked",
+    "name": "Bear Meat Cooked",
+    "description": "Delicious Bear Meat",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 60 calories",
+      "Adds 1 hydration",
+      "Adds 5 health over 0 seconds",
+      "Can be cooked for 30 seconds to get x1 Burnt Bear Meat"
+    ]
+  },
+  {
+    "shortname": "bearmeat",
+    "name": "Bear Meat",
+    "description": "Raw Bear Meat. Eating it will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 10 calories",
+      "Adds 3 hydration",
+      "Adds 5 poison",
+      "Can be cooked for 30 seconds to get x1 Bear Meat Cooked"
+    ]
+  },
+  {
+    "shortname": "meat.pork.burned",
+    "name": "Burned Pork",
+    "description": "This little piggy has been in the oven for too long",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 10 calories",
+      "Adds 1 hydration",
+      "Adds 5 health over 2 seconds",
+      "Adds 5 poison",
+      "Can be cooked for 120 seconds to get x1 Charcoal"
+    ]
+  },
+  {
+    "shortname": "meat.pork.cooked",
+    "name": "Cooked Pork",
+    "description": "Cooked pork, all ready to eat",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 110 calories",
+      "Adds 1 hydration",
+      "Adds 5 health over 10 seconds",
+      "Can be cooked for 60 seconds to get x1 Burned Pork"
+    ]
+  },
+  {
+    "shortname": "meat.boar",
+    "name": "Pork",
+    "description": "Raw pork",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 60 calories",
+      "Adds 10 hydration",
+      "Adds 5 poison",
+      "Can be cooked for 30 seconds to get x1 Cooked Pork"
+    ]
+  },
+  {
+    "shortname": "wolfmeat.burned",
+    "name": "Burned Wolf Meat",
+    "description": "Spoiled Wolf Meat. Consuming will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 10 calories",
+      "Adds 1 hydration",
+      "Adds 5 poison",
+      "Adds 1 health"
+    ]
+  },
+  {
+    "shortname": "wolfmeat.cooked",
+    "name": "Cooked Wolf Meat",
+    "description": "Cooked Wolf Meat. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 100 calories",
+      "Adds 1 hydration",
+      "Adds 5 health over 0 seconds",
+      "Can be cooked for 60 seconds to get x1 Burned Wolf Meat"
+    ]
+  },
+  {
+    "shortname": "wolfmeat.raw",
+    "name": "Raw Wolf Meat",
+    "description": "Raw Wolf Meat. Consuming will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      },
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Adds 20 calories",
+      "Adds 3 hydration",
+      "Adds 10 poison",
+      "Adds 1 health",
+      "Can be cooked for 30 seconds to get x1 Cooked Wolf Meat"
+    ]
+  },
+  {
+    "shortname": "wolfmeat.spoiled",
+    "name": "Spoiled Wolf Meat",
+    "description": "Spoiled Wolf Meat. Consuming will damage your health.",
+    "maxStack": 20,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 10 calories",
+      "Adds 2 hydration",
+      "Adds 10 poison"
+    ]
+  },
+  {
+    "shortname": "metal.fragments",
+    "name": "Metal Fragments",
+    "description": "Metal Fragments. Smelted from Metal Ore, used in lots of different crafting recipes.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "metal.ore",
+    "name": "Metal Ore",
+    "description": "A naturally occurring rock containing metal and metal compounds. You can extract this metal using a furnace.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Can be cooked for 10 seconds to get x1 Metal Fragments"
+    ]
+  },
+  {
+    "shortname": "metal.plate.torso",
+    "name": "Metal Chest Plate",
+    "description": "A metal plate covering your torso. Can deflect attacks.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "5 protection from bullets",
+      "4 protection from slash hits",
+      "4 protection from blunt hits",
+      "4 protection from bites",
+      "4 protection from stab hits",
+      "6 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "metal.refined",
+    "name": "High Quality Metal",
+    "description": "High quality metal suitable for armor and weapons construction.",
+    "maxStack": 100,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "metalblade",
+    "name": "Metal Blade",
+    "description": "A Metal Blade for making melee weapons",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "metalpipe",
+    "name": "Metal Pipe",
+    "description": "Metal Pipe",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "mining.pumpjack",
+    "name": "Pump Jack",
+    "description": "Extracts oil from the ground. Use a Survey Charge to determine the amount of oil available for extraction in any given area.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "mining.quarry",
+    "name": "Mining Quarry",
+    "description": "Extracts minerals from the ground. Use a Survey Charge to determine the amount of minerals available for extraction in any given area.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "fish.minnows",
+    "name": "Minnows",
+    "description": "A Small group of edible fish",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "50% chance to give Bone Fragments.",
+      "Adds 10 calories",
+      "Adds 1 hydration",
+      "Adds 1 health over 0 seconds"
+    ]
+  },
+  {
+    "shortname": "smg.mp5",
+    "name": "MP5A4",
+    "description": "A medium damage machine gun.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.125,
+        "reloadTime": 4,
+        "magazineSize": 30,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "mushroom",
+    "name": "Mushroom",
+    "description": "A Mushroom found on the ground. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 15 calories",
+      "Adds 5 hydration",
+      "Adds 3 health"
+    ]
+  },
+  {
+    "shortname": "weapon.mod.muzzleboost",
+    "name": "Muzzle Boost",
+    "description": "Increases weapon fire rate by channeling gasses back into the weapon cycling it faster, at the cost of bullet velocity and accuracy",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "weapon.mod.muzzlebrake",
+    "name": "Muzzle Brake",
+    "description": "Lowers recoil felt by the operator but can make bullet path more unpredictable",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "note",
+    "name": "Note",
+    "description": "A scrap of paper for leaving notes.",
+    "maxStack": 1,
+    "category": "misc",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "burlap.trousers",
+    "name": "Burlap Trousers",
+    "description": "Trousers made out of burlap.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "pants",
+    "name": "Pants",
+    "description": "Pants.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "3 protection from bullets",
+      "4 protection from slash hits",
+      "4 protection from blunt hits",
+      "4 protection from bites",
+      "3 protection from stab hits",
+      "1 protection from radiation exposure",
+      "10 protection from cold exposure",
+      "4 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "attire.hide.pants",
+    "name": "Hide Pants",
+    "description": "Trousers made from the hide of an animal.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "9 protection from bites",
+      "2 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "5 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "roadsign.kilt",
+    "name": "Road Sign Kilt",
+    "description": "A shoddy piece of leg armor made from Metal Fragments and Leather.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "4 protection from bullets",
+      "5 protection from slash hits",
+      "4 protection from blunt hits",
+      "12 protection from bites",
+      "5 protection from stab hits",
+      "5 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "pants.shorts",
+    "name": "Shorts",
+    "description": "Trousers without the bottom of the legs",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "2 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "8 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "paper",
+    "name": "Paper",
+    "description": "Paper.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "pickaxe",
+    "name": "Pick Axe",
+    "description": "A Pickaxe, useful for gathering ore from rocks.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.5,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "pistol.eoka",
+    "name": "Eoka Pistol",
+    "description": "A very basic Pistol that fires one Pistol Round at a time.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.5,
+        "reloadTime": 2,
+        "magazineSize": 1,
+        "type": "weapon"
+      }
+    },
+    "descriptions": [
+      "Fires 20 projectiles per shot"
+    ]
+  },
+  {
+    "shortname": "pistol.revolver",
+    "name": "Revolver",
+    "description": "A six-shooter.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.1,
+        "reloadTime": 3.4,
+        "magazineSize": 8,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "pistol.semiauto",
+    "name": "Semi-Automatic Pistol",
+    "description": "A sem-automatic Pistol. Fires rapidly and with good accuracy.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.1,
+        "reloadTime": 2.9,
+        "magazineSize": 10,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "planter.large",
+    "name": "Large Planter Box",
+    "description": "A place to plant plants",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "planter.small",
+    "name": "Small Planter Box",
+    "description": "A small place to plant plants",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "attire.hide.poncho",
+    "name": "Hide Poncho",
+    "description": "A Poncho made from the hide of an animal.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "6 protection from bites",
+      "2 protection from stab hits",
+      "1 protection from radiation exposure",
+      "10 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "pookie.bear",
+    "name": "Pookie Bear",
+    "description": "A companion that reminds you of your youth",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "xmas.present.large",
+    "name": "Large Present",
+    "description": "A Large Present, the best there is. Unwrap it now!",
+    "maxStack": 1,
+    "category": "misc",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "xmas.present.medium",
+    "name": "Medium Present",
+    "description": "A medium present, might be good! Collect 5 to upgrade to a larger present",
+    "maxStack": 5,
+    "category": "misc",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "xmas.present.small",
+    "name": "Small Present",
+    "description": "A small stocking stuffer present, Collect 10 to upgrade to a larger present",
+    "maxStack": 10,
+    "category": "misc",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "propanetank",
+    "name": "Empty Propane Tank",
+    "description": "Strong metal object",
+    "maxStack": 5,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "pumpkin",
+    "name": "Pumpkin",
+    "description": "An edible vegetable that can also be worn as a hat. Eating it provides a small boost to health, hunger, and thirst.",
+    "maxStack": 1,
+    "category": "food",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "50% chance to give Pumpkin Seed.",
+      "Adds 40 calories",
+      "Adds 15 hydration",
+      "Adds 10 health over 30 seconds"
+    ]
+  },
+  {
+    "shortname": "seed.pumpkin",
+    "name": "Pumpkin Seed",
+    "description": "Seeds can be eaten or planted.",
+    "maxStack": 50,
+    "category": "food",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "target.reactive",
+    "name": "Reactive Target",
+    "description": "A reactive target that knocks down when hit, can be reset.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "box.repair.bench",
+    "name": "Repair Bench",
+    "description": "Repair items here.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "research.table",
+    "name": "Research Table",
+    "description": "Research items here.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "researchpaper",
+    "name": "Research Paper",
+    "description": "Use this item in a Research Bench to create blueprints of items",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "riflebody",
+    "name": "Rifle Body",
+    "description": "The firing mechanism of a rifle. Used in construction of a weapon that can fire pistol ammo fully automatic",
+    "maxStack": 10,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "roadsign.jacket",
+    "name": "Road Sign Jacket",
+    "description": "A shoddy piece of body armor made from Metal Fragments and Leather.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "4 protection from bullets",
+      "5 protection from slash hits",
+      "4 protection from blunt hits",
+      "12 protection from bites",
+      "5 protection from stab hits",
+      "5 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "roadsigns",
+    "name": "Road Signs",
+    "description": "Some road signs made of metal",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "rock",
+    "name": "Rock",
+    "description": "A Rock. The most basic melee weapon and gathering tool.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.3,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "rocket.launcher",
+    "name": "Rocket Launcher",
+    "description": "Shoots rockets slighty farther than North Korea.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 2,
+        "reloadTime": 6,
+        "magazineSize": 1,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "rope",
+    "name": "Rope",
+    "description": "A Length of Rope",
+    "maxStack": 50,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "water.salt",
+    "name": "Salt Water",
+    "description": "Water with a high salt content. Consuming will damage your health.",
+    "maxStack": 2147483647,
+    "category": "resources",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Removes 15 calories",
+      "Removes 20 hydration",
+      "Adds 5 poison",
+      "Removes 2 health"
+    ]
+  },
+  {
+    "shortname": "salvaged.cleaver",
+    "name": "Salvaged Cleaver",
+    "description": "A powerful 2-handed melee weapon with high damage.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 2,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "salvaged.sword",
+    "name": "Salvaged Sword",
+    "description": "A powerful melee weapon made from a filed-down wrench. Great durability, good damage.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.25,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "santahat",
+    "name": "Santa Hat",
+    "description": "A santa hat. Ho Ho ho.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "weapon.mod.small.scope",
+    "name": "4x Zoom Scope",
+    "description": "A small 4x zoom scope",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "rifle.semiauto",
+    "name": "Semi-Automatic Rifle",
+    "description": "A Semi Automatic Rifle",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.1333,
+        "reloadTime": 4.4,
+        "magazineSize": 16,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "semibody",
+    "name": "Semi Automatic Body",
+    "description": "The firing mechanism of a semi automatic weapon.",
+    "maxStack": 10,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sewingkit",
+    "name": "Sewing Kit",
+    "description": "A Sewing kit. Used to make advanced clothing",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sheetmetal",
+    "name": "Sheet Metal",
+    "description": "Sheet metal scraps",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "shelves",
+    "name": "Salvaged Shelves",
+    "description": "Shelves for item stacking",
+    "maxStack": 10,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "shirt.collared",
+    "name": "Shirt",
+    "description": "A smart casual shirt",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "9 protection from bites",
+      "2 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "6 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "shirt.tanktop",
+    "name": "Tank Top",
+    "description": "A tshirt without sleeves",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "1 protection from bullets",
+      "2 protection from slash hits",
+      "2 protection from blunt hits",
+      "4 protection from bites",
+      "1 protection from stab hits",
+      "0.4 protection from radiation exposure",
+      "6 protection from cold exposure",
+      "2 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "shoes.boots",
+    "name": "Boots",
+    "description": "Work boots.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "4 protection from radiation",
+      "3 protection from bites",
+      "2 protection from stab hits",
+      "0.6 protection from radiation exposure",
+      "10 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "shotgun.double",
+    "name": "Double Barrel Shotgun",
+    "description": "A Shotgun. Fires a two rounds with a wide spread before needing a reload",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.5,
+        "reloadTime": 5.5,
+        "magazineSize": 2,
+        "type": "weapon"
+      }
+    },
+    "descriptions": [
+      "Fires 20 projectiles per shot"
+    ]
+  },
+  {
+    "shortname": "shotgun.pump",
+    "name": "Pump Shotgun",
+    "description": "A Shotgun. Fires six rounds.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.1,
+        "reloadTime": 5.5,
+        "magazineSize": 6,
+        "type": "weapon"
+      }
+    },
+    "descriptions": [
+      "Fires 14 projectiles per shot"
+    ]
+  },
+  {
+    "shortname": "shotgun.waterpipe",
+    "name": "Waterpipe Shotgun",
+    "description": "A Shotgun. Fires a single round before reloading.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 2,
+        "reloadTime": 4.5,
+        "magazineSize": 1,
+        "type": "weapon"
+      }
+    },
+    "descriptions": [
+      "Fires 20 projectiles per shot"
+    ]
+  },
+  {
+    "shortname": "shutter.metal.embrasure.a",
+    "name": "Metal horizontal embrasure",
+    "description": "Static shutter that form a metal horizontal embrasure over your window frame",
+    "maxStack": 20,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "shutter.metal.embrasure.b",
+    "name": "Metal Vertical embrasure",
+    "description": "Static shutter that form a metal vertical embrasure over your window frame",
+    "maxStack": 20,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "shutter.wood.a",
+    "name": "Wood Shutters",
+    "description": "Wood shutters that you can open and close.",
+    "maxStack": 20,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.hanging.banner.large",
+    "name": "Large Banner Hanging",
+    "description": "A large banner hanging on a wall",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.hanging",
+    "name": "Two Sided Hanging Sign",
+    "description": "A double sided hanging sign, to attach to buildings",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.hanging.ornate",
+    "name": "Two Sided Ornate Hanging Sign",
+    "description": "A double sided hanging sign, to attach to buildings",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.pictureframe.landscape",
+    "name": "Landscape Picture Frame",
+    "description": "A landscape oriented canvas for artists paintings",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.pictureframe.portrait",
+    "name": "Portrait Picture Frame",
+    "description": "A portrait oriented canvas for artists paintings",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.pictureframe.tall",
+    "name": "Tall Picture Frame",
+    "description": "A tall canvas for artists paintings",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.pictureframe.xl",
+    "name": "XL Picture Frame",
+    "description": "An extra large canvas for artists paintings",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.pictureframe.xxl",
+    "name": "XXL Picture Frame",
+    "description": "A double extra large canvas for artists paintings",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.pole.banner.large",
+    "name": "Large Banner on pole",
+    "description": "A large banner hanging on a pole",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.post.double",
+    "name": "Double Sign Post",
+    "description": "A double sign post that you can plant into terrain",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.post.single",
+    "name": "Single Sign Post",
+    "description": "A single sign post that you can plant into terrain",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.post.town",
+    "name": "One Sided Town Sign Post",
+    "description": "A one sided town sign post, that you can plant into terrain",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.post.town.roof",
+    "name": "Two Sided Town Sign Post",
+    "description": "A double sided town sign post, with roof, that you can plant into terrain",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.wooden.huge",
+    "name": "Huge Wooden Sign",
+    "description": "A 6-meter by 3-meter wooden sign that you can write on.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.wooden.large",
+    "name": "Large Wooden Sign",
+    "description": "A 3-meter by 1.5-meter wooden sign that you can write on.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.wooden.medium",
+    "name": "Wooden Sign",
+    "description": "A 2-meter by 1-meter wooden sign that you can write on.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sign.wooden.small",
+    "name": "Small Wooden Sign",
+    "description": "A 1-meter by 0.5-meter wooden sign that you can write on.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "weapon.mod.silencer",
+    "name": "Silencer",
+    "description": "Significantly reduces the sound of gunfire, and completely removes any visible muzzle flash.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "skull.human",
+    "name": "Human Skull",
+    "description": "A human skull.",
+    "maxStack": 1,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "skull.wolf",
+    "name": "Wolf Skull",
+    "description": "A wolf skull.",
+    "maxStack": 1,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sleepingbag",
+    "name": "Sleeping Bag",
+    "description": "A sleeping bag. Placing this will give you a location to respawn.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "bed": {
+        "type": "bed"
+      }
+    },
+    "descriptions": [
+      "300 second cooldown between respawns. Triggers cooldown on all beds within 50m."
+    ]
+  },
+  {
+    "shortname": "small.oil.refinery",
+    "name": "Small Oil Refinery",
+    "description": "A small refinery which can produce Low Grade Fuel from Crude Oil.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {
+      "oven": {
+        "slots": 6,
+        "allowByproductCreation": false,
+        "temperature": 1500,
+        "fuelType": "wood",
+        "type": "oven"
+      }
+    },
+    "descriptions": [
+      "Spawns with 100 Wood",
+      "Can be used for fractioning",
+      "Uses 1 Wood every 1.333333 seconds."
+    ]
+  },
+  {
+    "shortname": "stash.small",
+    "name": "Small Stash",
+    "description": "A hidden, burried stash to keep your items safe. After placing, return to the stash and aim at the ground where you hid it and it will reveal itself.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "fish.troutsmall",
+    "name": "Small Trout",
+    "description": "A Small Trout. Good for a few meals",
+    "maxStack": 10,
+    "category": "food",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "smallwaterbottle",
+    "name": "Small Water Bottle",
+    "description": "A Small Water Bottle. Left click to drink, right click to fill from water sources, or to pour out",
+    "maxStack": 1,
+    "category": "food",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "smg.2",
+    "name": "Custom SMG",
+    "description": "A rapid-firing Machine Gun. Sacrifices accuracy and distance for speed.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.095,
+        "reloadTime": 4,
+        "magazineSize": 24,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "smgbody",
+    "name": "SMG Body",
+    "description": "The firing mechanism of a submachinegun. Used in construction of a weapon that can fire pistol ammo fully automatic",
+    "maxStack": 10,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "spear.stone",
+    "name": "Stone Spear",
+    "description": "A stone-tipped wooden Spear. Slightly longer range",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.65,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "spear.wooden",
+    "name": "Wooden Spear",
+    "description": "A wooden Spear.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.65,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "spikes.floor",
+    "name": "Wooden Floor Spikes",
+    "description": "A set of spikes that will slow down and hurt anyone that walks over them.",
+    "maxStack": 1,
+    "category": "traps",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "metalspring",
+    "name": "Metal Spring",
+    "description": "A metal spring. Used to provide motion or resistance in objects",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sticks",
+    "name": "Sticks",
+    "description": "Some long, some short",
+    "maxStack": 100,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "stocking.large",
+    "name": "SUPER Stocking",
+    "description": "A SUPER Stocking. Hang it by a fire and you might just get an awesome gift!",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "stocking.small",
+    "name": "Small Stocking",
+    "description": "A small stocking. Hang it by a fire and you might just get a gift! Collect 6 to upgrade to a SUPER Stocking",
+    "maxStack": 5,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "stone.pickaxe",
+    "name": "Stone Pick Axe",
+    "description": "A stone Pickaxe.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.9,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "stonehatchet",
+    "name": "Stone Hatchet",
+    "description": "A stone Hatchet.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.9,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "stones",
+    "name": "Stones",
+    "description": "Stones.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sulfur",
+    "name": "Sulfur",
+    "description": "Sulfur is commonly used in gunpowder, medicine, and matches. Matches release sulfur dioxide when they burn, giving them their smell. Sulfur is an essential component to living cells. Many proteins contain sulfur. It is also used as a pesticide on organic farms.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "sulfur.ore",
+    "name": "Sulfur Ore",
+    "description": "A rock containing sulfur. The sulfur can be extracted using a furnace.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {
+      "cookable": {
+        "type": "cookable"
+      }
+    },
+    "descriptions": [
+      "Can be cooked for 5 seconds to get x1 Sulfur"
+    ]
+  },
+  {
+    "shortname": "supply.signal",
+    "name": "Supply Signal",
+    "description": "Green signal smoke. Use to mark a location for an airdrop.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "surveycharge",
+    "name": "Survey Charge",
+    "description": "Use this on the terrain to see which resources are available for mining.",
+    "maxStack": 10,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "fishtrap.small",
+    "name": "Survival Fish Trap",
+    "description": "Traps fish, place on the shore and load with bait.",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "syringe.medical",
+    "name": "Medical Syringe",
+    "description": "Heal yourself or others with this syringe. Left-click heals you, right-click heals a target.",
+    "maxStack": 2,
+    "category": "medical",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Removes 5 poison",
+      "Removes 10 radiation",
+      "Adds 15 health",
+      "Adds 20 health over 0 seconds"
+    ]
+  },
+  {
+    "shortname": "targeting.computer",
+    "name": "Targeting Computer",
+    "description": "A computer loaded with software that can analyze a video and produce rotational deltas to individual objects contained in the feed",
+    "maxStack": 1,
+    "category": "resources",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "tarp",
+    "name": "Tarp",
+    "description": "A waterproof tarp",
+    "maxStack": 20,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "techparts",
+    "name": "Tech Trash",
+    "description": "A collection of random tech parts",
+    "maxStack": 50,
+    "category": "component",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "smg.thompson",
+    "name": "Thompson",
+    "description": "A medium damage machine gun.",
+    "maxStack": 1,
+    "category": "weapon",
+    "meta": {
+      "weapon": {
+        "fireDelay": 0.11,
+        "reloadTime": 4,
+        "magazineSize": 20,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "torch",
+    "name": "Torch",
+    "description": "A Torch. Lights your way at night and can be used as a weapon.",
+    "maxStack": 1,
+    "category": "tool",
+    "meta": {
+      "weapon": {
+        "fireDelay": 1.3,
+        "reloadTime": 0,
+        "magazineSize": 0,
+        "type": "weapon"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "tshirt",
+    "name": "T-Shirt",
+    "description": "A t-shirt with very short sleeves.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "5 protection from bites",
+      "2 protection from stab hits",
+      "0.5 protection from radiation exposure",
+      "5 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "tshirt.long",
+    "name": "Longsleeve T-Shirt",
+    "description": "A t-shirt with long sleeves.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "3 protection from slash hits",
+      "3 protection from blunt hits",
+      "5 protection from bites",
+      "2 protection from stab hits",
+      "0.5 protection from radiation exposure",
+      "5 protection from cold exposure",
+      "3 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "wall.external.high.stone",
+    "name": "High External Stone Wall",
+    "description": "A high stone wall used to keep people off your property.",
+    "maxStack": 10,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.external.high",
+    "name": "High External Wooden Wall",
+    "description": "A high wooden wall used to keep people off your property.",
+    "maxStack": 10,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.frame.cell.gate",
+    "name": "Prison Cell Gate",
+    "description": "A prison cell gate to lock things behind bars",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.frame.cell",
+    "name": "Prison Cell Wall",
+    "description": "A prison cell wall",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.frame.fence.gate",
+    "name": "Chainlink Fence Gate",
+    "description": "A Chainlink Fence Gate",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.frame.fence",
+    "name": "Chainlink Fence",
+    "description": "A Chainlink Fence",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.frame.shopfront",
+    "name": "Shop Front",
+    "description": "A shop front to do commerce",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.window.bars.metal",
+    "name": "Metal Window Bars",
+    "description": "Metal window bars made to fit a normal sized window",
+    "maxStack": 10,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.window.bars.toptier",
+    "name": "Reinforced Window Bars",
+    "description": "Window bars to fit a standard window. These bars are made out of reinforced metal and contain a thick surround to protect from incoming projectiles.",
+    "maxStack": 10,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wall.window.bars.wood",
+    "name": "Wooden Window Bars",
+    "description": "Window bars made out of wood. They'll stop people climbing through your window, but probably not for very long.",
+    "maxStack": 10,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "water",
+    "name": "Water",
+    "description": "Water. Drinking it will alleviate your thirst.",
+    "maxStack": 2147483647,
+    "category": "resources",
+    "meta": {
+      "consumable": {
+        "type": "consumable"
+      }
+    },
+    "descriptions": [
+      "Adds 30 hydration",
+      "Removes 3 poison",
+      "Adds 5 health over 5 seconds",
+      "Removes 5 radiation"
+    ]
+  },
+  {
+    "shortname": "water.catcher.large",
+    "name": "Large Water Catcher",
+    "description": "Collects drinkable water from the air via rain and dew.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "water.catcher.small",
+    "name": "Small Water Catcher",
+    "description": "Collects drinkable water from the air via rain and dew.",
+    "maxStack": 1,
+    "category": "construction",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "water.barrel",
+    "name": "Water Barrel",
+    "description": "A storage container for water",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "waterjug",
+    "name": "Water Jug",
+    "description": "A large jerry can for water",
+    "maxStack": 1,
+    "category": "food",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "water.purifier",
+    "name": "Water Purifier",
+    "description": "A Water Purifier. Place overtop of a campfire. Will provide clean, potable water from salty, or stagnant water",
+    "maxStack": 1,
+    "category": "items",
+    "meta": {},
+    "descriptions": []
+  },
+  {
+    "shortname": "wood",
+    "name": "Wood",
+    "description": "Wood. Collected from trees and used in many crafting recipes. It's also needed to cook in camp-fires.",
+    "maxStack": 1000,
+    "category": "resources",
+    "meta": {
+      "burnable": {
+        "fuelAmount": 10,
+        "byproductAmount": 1,
+        "byproductChance": 0.75,
+        "byproductItem": "charcoal",
+        "type": "burnable"
+      }
+    },
+    "descriptions": []
+  },
+  {
+    "shortname": "wood.armor.jacket",
+    "name": "Wood Chestplate",
+    "description": "A shoddy piece of body armor made from Wood and Cloth.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "8 protection from slash hits",
+      "8 protection from blunt hits",
+      "6 protection from bites",
+      "8 protection from stab hits",
+      "6 protection from explosions",
+      "1 protection from radiation exposure",
+      "4 protection from arrows"
+    ]
+  },
+  {
+    "shortname": "wood.armor.pants",
+    "name": "Wood Armor Pants",
+    "description": "A shoddy piece of leg armor made from Wood and Cloth.",
+    "maxStack": 1,
+    "category": "attire",
+    "meta": {
+      "wearable": {
+        "type": "wearable"
+      }
+    },
+    "descriptions": [
+      "2 protection from bullets",
+      "8 protection from slash hits",
+      "8 protection from blunt hits",
+      "6 protection from bites",
+      "8 protection from stab hits",
+      "6 protection from explosions",
+      "1 protection from radiation exposure",
+      "4 protection from arrows"
+    ]
+  }
+]
