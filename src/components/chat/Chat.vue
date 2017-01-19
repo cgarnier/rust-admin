@@ -1,13 +1,13 @@
 <template>
   <div class="chat">
-    <div class="chat-wrapper">
+    <div ref="win" class="chat-wrapper">
       <div class="chat-content">
         <div class="chat-entry" v-for="entry in formattedChatEntries">
           <span class="date">
             {{entry.date}}
           </span>
           <span class="name">
-            <span v-if="entry.id === 0">{{entry.name}}</span>
+            <span v-if="entry.id === '0' || entry.id === 0">{{entry.name}}</span>
             <router-link v-else :to="{name: 'player', params: {id: entry.id}}">{{entry.name}}</router-link>
           </span>
           <span class="message">{{entry.message}}</span>
@@ -56,7 +56,7 @@
     computed: {
       formattedChatEntries () {
         Vue.nextTick(() => {
-          this.$refs.bottom.scrollIntoView()
+          this.$refs.win.scrollTop = this.$refs.win.scrollHeight
         })
         return this.chatEntries.map((e) => {
           return {

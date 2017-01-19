@@ -107,6 +107,7 @@ class RconService {
       this.callbacks[ this.lastIndex ] = (data) => {
         if (data.Message) {
           try {
+            data.Message = data.Message.replace(new RegExp('"UserId": ([0-9]+),', 'g'), '"UserId":"$1",')
             data.Message = JSON.parse(data.Message)
           } catch (e) {
             // ignore
