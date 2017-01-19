@@ -1,0 +1,132 @@
+image: "docker:git"
+services:
+  - docker:dind
+  
+stages:
+- test
+- release
+- deploy
+
+variables:
+  CONTAINER_TEST_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:$CI_BUILD_REF_NAME
+  CONTAINER_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin
+  #https://gitlab.com/gitlab-org/gitlab-ce/issues/17861#note_12991518
+  DOCKER_DRIVER: aufs
+  DOCKERHUB_RELEASE: cgarnier/rust-admin
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
+
+test:
+  stage: test
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
+    - docker run $CONTAINER_TEST_IMAGE npm test
+    - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker push $CONTAINER_TEST_IMAGE
+  only:
+    - branches
+  cache:
+    paths:
+    - node_modules/
+  tags:
+    - dind
+
+test_tags:
+  stage: test
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
+    - docker run $CONTAINER_TEST_IMAGE npm test
+    - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker push $CONTAINER_TEST_IMAGE
+  cache:
+    paths:
+    - node_modules/
+  artifacts:
+    paths:
+      - dist/
+  tags:
+    - dind
+  only:
+    - tags
+
+release_master:
+  stage: release
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:latest
+
+    # release docker hub
+    - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
+    - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:latest
+  only:
+    - master
+  tags:
+    - dind
+
+release_tags:
+  stage: release
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:$CI_BUILD_TAG
+    # release docker hub
+    - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
+    - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:$CI_BUILD_TAG
+  only:
+    - tags
+  tags:
+    - dind
+
+deploy-testing:
+  stage: deploy
+  script:
+    - mkdir -p /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - cp docker-compose-test.yml /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}/docker-compose.yml
+    - cd /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - docker-compose stop
+    - docker-compose pull
+    - docker-compose rm -f
+    - docker-compose up -d
+  except:
+    - master
+    - tags
+  tags:
+    - tedy.nibor.me
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    url: http://$CI_BUILD_REF_NAME.rust-admin.nibor.me
+    on_stop: stop_review_app
+
+stop_review_app:
+  stage: deploy
+  script:
+    - cd /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - docker-compose stop
+    - docker-compose rm -f
+    - rm -rf /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+  when: manual
+  environment:
+    name: review/$CI_BUILD_REF_NAME
+    action: stop
+  tags:
+    - tedy.nibor.me
+
+deploy-prod:
+  stage: deploy
+  script:
+    - mkdir -p /home/robin/prod/rust-admin
+    - cp docker-compose-prod.yml /home/robin/prod/rust-admin/docker-compose.yml
+    - cd /home/robin/prod/rust-admin/
+    - docker-compose stop
+    - docker-compose pull
+    - docker-compose rm -f
+    - docker-compose up -d
+  only:
+    - master
+  tags:
+    - tedy.nibor.me
+  environment:
+    name: production
+    url: https://rust-admin.nibor.me

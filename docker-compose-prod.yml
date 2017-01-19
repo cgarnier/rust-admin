@@ -1,0 +1,10 @@
+version: "2"
+services:
+  web:
+    image: gitlab.nibor.me:4567/arcandiers/rust-admin:latest
+    environment:
+      - VIRTUAL_HOST=rust-admin.nibor.me,rust-admin.com
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=rust-admin.nibor.me,rust-admin.com
+      - LETSENCRYPT_EMAIL=$LETSENCRYPT_EMAIL
+    network_mode: bridge

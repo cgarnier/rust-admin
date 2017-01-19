@@ -1,35 +1,42 @@
 <template>
-
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="#">My Site</a></h1>
-      </li>
-      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <li class="active"><a href="#">Right Button Active</a></li>
-        <li class="has-dropdown">
-          <a href="#">Right Button Dropdown</a>
-          <ul class="dropdown">
-            <li><a href="#">First link in dropdown</a></li>
-            <li class="active"><a href="#">Active link in dropdown</a></li>
-          </ul>
-        </li>
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text"><span v-text="name"></span></li>
       </ul>
-
-      <!-- Left Nav Section -->
-      <ul class="left">
-        <li><a href="#">Left Nav Button</a></li>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li><span>{{players}} <i class="ion ion-person-stalker"></i></span></li>
+        <li><button type="button" @click="logout" class="button">Logout</button></li>
       </ul>
-    </section>
-  </nav>
+    </div>
+  </div>
 </template>
 
 <script type="text/babel">
-  export default {}
+  import LoginService from '../../services/LoginService'
+  import ServerInfoService from '../../services/ServerInfosService'
+  import './topbar.scss'
+  export default {
+    data () {
+      return {
+        name: 'ok',
+        players: 0
+      }
+    },
+    methods: {
+      logout () {
+        LoginService.logout()
+      },
+      handleInfo (info) {
+        this.name = info.Hostname
+        this.players = info.Players
+      }
+    },
+    mounted () {
+      ServerInfoService.on(this.handleInfo)
+    }
+  }
 </script>
+

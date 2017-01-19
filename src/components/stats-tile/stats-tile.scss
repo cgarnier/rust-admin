@@ -1,0 +1,58 @@
+.stats-tile {
+  $aqua: #00c0ef;
+  $green: #00a65a;
+  $orange: #f39c12;
+  $red: #dd4b39;
+  min-height: 105px;
+  &.aqua {
+    background-color: $aqua;
+  }
+  &.green {
+    background-color: $green;
+  }
+  &.orange {
+    background-color: $orange;
+  }
+  &.red {
+    background-color: $red;
+  }
+  background-color: #673AB7;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+
+  position: relative;
+  .inner {
+    padding: 10px;
+    .name {
+      font-size: 1em;
+      text-align: left;
+      display: block;
+      margin-bottom: 7px;
+    }
+    .value {
+      font-weight: bold;
+      font-size: 38px;
+      text-align: left;
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 85px;
+    color: rgba(0, 0, 0, 0.15);
+    transition: font-size 0.3s;
+  }
+  &:hover {
+    .icon {
+      font-size: 95px;
+    }
+
+  }
+}
+
+
