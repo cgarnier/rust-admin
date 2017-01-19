@@ -84,14 +84,14 @@
         this.banConfirmationShown = true
       },
       kick () {
-        PlayersService.kick(this.player.id)
+        PlayersService.kick(this.player.SteamID)
           .then(() => {
             this.kickConfirmationShown = false
             this.player = null
           })
       },
       ban () {
-        PlayersService.ban(this.player.id)
+        PlayersService.ban(this.player.SteamID)
           .then(() => {
             this.banConfirmationShown = false
             this.player = null
