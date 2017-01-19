@@ -1,6 +1,6 @@
 <template>
   <div class="console">
-    <div class="logs-container">
+    <div ref="win" class="logs-container">
       <div class="logs">
         <div class="log-entry" :class="l.type + '-log'" v-for="l in formattedLogs">
             <span class="type" v-text="'[' + l.type + ']'"></span>
@@ -76,7 +76,7 @@
     computed: {
       formattedLogs () {
         Vue.nextTick(() => {
-          this.$refs.bottom.scrollIntoView()
+          this.$refs.win.scrollTop = this.$refs.win.scrollHeight
         })
         return this.logs
           .map((l) => {
