@@ -7,7 +7,7 @@
             {{entry.date}}
           </span>
           <span class="name">
-            <span v-if="entry.id === 0">{{entry.name}}</span>
+            <span v-if="entry.id === '0' || entry.id === 0">{{entry.name}}</span>
             <router-link v-else :to="{name: 'player', params: {id: entry.id}}">{{entry.name}}</router-link>
           </span>
           <span class="message">{{entry.message}}</span>
