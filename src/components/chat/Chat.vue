@@ -1,6 +1,6 @@
 <template>
   <div class="chat">
-    <div class="chat-wrapper">
+    <div ref="win" class="chat-wrapper">
       <div class="chat-content">
         <div class="chat-entry" v-for="entry in formattedChatEntries">
           <span class="date">
@@ -56,7 +56,7 @@
     computed: {
       formattedChatEntries () {
         Vue.nextTick(() => {
-          this.$refs.bottom.scrollIntoView()
+          this.$refs.win.scrollTop = this.$refs.win.scrollHeight
         })
         return this.chatEntries.map((e) => {
           return {
