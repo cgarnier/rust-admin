@@ -4,11 +4,12 @@ services:
   
 stages:
 - test
+- release
 - deploy
 
 variables:
   CONTAINER_TEST_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:$CI_BUILD_REF_NAME
-  CONTAINER_RELEASE_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:latest
+  CONTAINER_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin
   #https://gitlab.com/gitlab-org/gitlab-ce/issues/17861#note_12991518
   DOCKER_DRIVER: aufs
 
@@ -19,26 +20,41 @@ test:
   stage: test
   script:
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
-
     - docker run $CONTAINER_TEST_IMAGE npm test
-
     - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
-
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker push $CONTAINER_TEST_IMAGE
   cache:
     paths:
     - node_modules/
-
   tags:
     - dind
 
+release_master:
+  stage: release
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:latest
+  only:
+    - master
+  tags:
+    - dind
+
+release_tags:
+  stage: release
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:$CI_BUILD_TAG
+  only:
+    - tags
+  tags:
+    - dind
 
 deploy-testing:
   stage: deploy
   script:
     - mkdir -p /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
-    - cp docker-compose.yml /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}/docker-compose.yml
+    - cp docker-compose-test.yml /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}/docker-compose.yml
     - cd /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
     - docker-compose stop
     - docker-compose pull
@@ -46,6 +62,7 @@ deploy-testing:
     - docker-compose up -d
   except:
     - master
+    - tags
   tags:
     - tedy.nibor.me
   environment:
@@ -66,3 +83,21 @@ stop_review_app:
     action: stop
   tags:
     - tedy.nibor.me
+
+deploy-prod:
+  stage: deploy
+  script:
+    - mkdir -p /home/robin/prod/rust-admin
+    - cp docker-compose-prod.yml /home/robin/prod/rust-admin/docker-compose.yml
+    - cd /home/robin/prod/rust-admin/
+    - docker-compose stop
+    - docker-compose pull
+    - docker-compose rm -f
+    - docker-compose up -d
+  only:
+    - master
+  tags:
+    - tedy.nibor.me
+  environment:
+    name: production
+    url: https://rust-admin.nibor.me
