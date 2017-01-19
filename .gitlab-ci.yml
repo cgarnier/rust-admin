@@ -57,10 +57,12 @@ release_master:
   script:
     - docker pull $CONTAINER_TEST_IMAGE
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:latest
+    - docker push $CONTAINER_IMAGE:latest
 
     # release docker hub
     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:latest
+    - docker push $DOCKERHUB_RELEASE:latest
   only:
     - master
   tags:
@@ -71,9 +73,11 @@ release_tags:
   script:
     - docker pull $CONTAINER_TEST_IMAGE
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:$CI_BUILD_TAG
+    - docker push $CONTAINER_IMAGE:$CI_BUILD_TAG
     # release docker hub
     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:$CI_BUILD_TAG
+    - docker push $DOCKERHUB_RELEASE:$CI_BUILD_TAG
   only:
     - tags
   tags:
