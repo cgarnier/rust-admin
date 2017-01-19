@@ -3,6 +3,7 @@
   $green: #00a65a;
   $orange: #f39c12;
   $red: #dd4b39;
+  min-height: 105px;
   &.aqua {
     background-color: $aqua;
   }
@@ -36,7 +37,6 @@
       text-align: left;
       display: block;
       margin-bottom: 0;
-
     }
   }
   .icon {
