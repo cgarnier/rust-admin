@@ -1,12 +1,19 @@
-import moment from 'moment'
 class Utils {
   formatDuration (input) {
-    let now = new Date()
-    let date = new Date(now.getTime() - (input * 1000))
-    let diff = moment(moment(now).diff(date))
-    let days = diff.dayOfYear() - 1
-    let time = diff.format('HH:mm:ss')
-    return `${days > 0 ? days + ' day' + (days > 1 ? 's' : '') : ''} ${time}`
+    var hours = Math.floor(input / 3600)
+    var minutes = Math.floor((input - (hours * 3600)) / 60)
+    var seconds = input - (hours * 3600) - (minutes * 60)
+
+    if (hours < 10) {
+      hours = '0' + hours
+    }
+    if (minutes < 10) {
+      minutes = '0' + minutes
+    }
+    if (seconds < 10) {
+      seconds = '0' + seconds
+    }
+    return hours + ':' + minutes + ':' + seconds
   }
 }
 
