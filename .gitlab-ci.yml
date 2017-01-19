@@ -29,8 +29,8 @@ test:
     - node_modules/
   tags:
     - dind
-  except:
-    - tags
+  only:
+    - branches
 
 test:
   stage: test
