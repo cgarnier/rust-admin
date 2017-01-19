@@ -19,7 +19,7 @@ Similar to [Facepunch](https://github.com/Facepunch) [webrcon](https://github.co
 ## Using docker
 
 ```
-docker run -d --name rust-admin -p 80:80 gitlab.nibor.me:4567/arcandiers/rust-admin:latest
+docker run -d --name rust-admin -p 80:80 cgarnier/rust-admin:latest
 ```
 
 Then visit [http://localhost](http://localhost).
