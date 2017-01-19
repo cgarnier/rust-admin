@@ -24,15 +24,15 @@ test:
     - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker push $CONTAINER_TEST_IMAGE
+  only:
+    - branches
   cache:
     paths:
     - node_modules/
   tags:
     - dind
-  only:
-    - branches
 
-test:
+test_tags:
   stage: test
   script:
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
