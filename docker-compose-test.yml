@@ -5,4 +5,5 @@ services:
     environment:
       - VIRTUAL_HOST=${CI_BUILD_REF_NAME}.rust-admin.nibor.me
       - VIRTUAL_PORT=80
+      - HTTPS_METHOD=noredirect
     network_mode: bridge
