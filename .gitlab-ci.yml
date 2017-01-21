@@ -1,11 +1,15 @@
-image: "docker:git"
-services:
-  - docker:dind
-  
 stages:
-- test
-- release
-- deploy
+  - setup
+  - test
+  - build
+  - release
+  - deploy
+
+cache:
+  untracked: true
+  key: "$CI_PROJECT_NAME"
+  paths:
+    - node_modules/
 
 variables:
   CONTAINER_TEST_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:$CI_BUILD_REF_NAME
@@ -14,77 +18,161 @@ variables:
   DOCKER_DRIVER: aufs
   DOCKERHUB_RELEASE: cgarnier/rust-admin
 
-before_script:
-  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
+setup:
+  stage: setup
+  image: node:latest
+  script:
+    - npm i
+  tags:
+    - dind
 
 test:
   stage: test
+  image: node:latest
   script:
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
-    - docker run $CONTAINER_TEST_IMAGE npm test
-    - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
-    - docker push $CONTAINER_TEST_IMAGE
-  only:
-    - branches
-  cache:
-    paths:
-    - node_modules/
+    - npm test
   tags:
     - dind
 
-test_tags:
-  stage: test
+build:
+  stage: build
+  image: node:latest
   script:
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
-    - docker run $CONTAINER_TEST_IMAGE npm test
-    - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
-    - docker push $CONTAINER_TEST_IMAGE
-  cache:
-    paths:
-    - node_modules/
+    - npm run build
   artifacts:
     paths:
       - dist/
+    expire_in: 1 week
+  only:
+    - branches
   tags:
     - dind
-  only:
+
+
+# test_tags:
+#   stage: test
+#   script:
+#     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
+#     - docker run $CONTAINER_TEST_IMAGE npm test
+#     - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
+#     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+#     - docker push $CONTAINER_TEST_IMAGE
+#   artifacts:
+#     paths:
+#       - dist/
+#   tags:
+#     - dind
+#   only:
+#     - tags
+
+.release_env: &release_env
+  stage: release
+  image: "docker:git"
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
+  tags:
+    - dind
+
+release:
+  <<: *release_env
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker push $CONTAINER_TEST_IMAGE
+  except:
+    - master
     - tags
 
-release_master:
-  stage: release
+release_master_gitlab:
+  <<: *release_env
   script:
-    - docker pull $CONTAINER_TEST_IMAGE
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:latest
     - docker push $CONTAINER_IMAGE:latest
+  only:
+    - master
 
-    # release docker hub
-    - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
+release_master_dockerhub:
+  <<: *release_env
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:latest
     - docker push $DOCKERHUB_RELEASE:latest
   only:
     - master
-  tags:
-    - dind
 
-release_tags:
-  stage: release
+release_tags_gitlab:
+  <<: *release_env
+  before_script:
+    - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
   script:
-    - docker pull $CONTAINER_TEST_IMAGE
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:$CI_BUILD_TAG
     - docker push $CONTAINER_IMAGE:$CI_BUILD_TAG
-    # release docker hub
+  only:
+    - tags
+
+release_tags_dockerhub:
+  <<: *release_env
+  before_script:
     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:$CI_BUILD_TAG
     - docker push $DOCKERHUB_RELEASE:$CI_BUILD_TAG
   only:
     - tags
-  tags:
-    - dind
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# release_master:
+#   stage: release
+#   script:
+#     - docker pull $CONTAINER_TEST_IMAGE
+#     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:latest
+#     - docker push $CONTAINER_IMAGE:latest
+
+#     # release docker hub
+#     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
+#     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:latest
+#     - docker push $DOCKERHUB_RELEASE:latest
+#   only:
+#     - master
+#   tags:
+#     - dind
+
+# release_tags:
+#   stage: release
+#   script:
+#     - docker pull $CONTAINER_TEST_IMAGE
+#     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:$CI_BUILD_TAG
+#     - docker push $CONTAINER_IMAGE:$CI_BUILD_TAG
+#     # release docker hub
+#     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
+#     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:$CI_BUILD_TAG
+#     - docker push $DOCKERHUB_RELEASE:$CI_BUILD_TAG
+#   only:
+#     - tags
+#   tags:
+#     - dind
 
 deploy-testing:
   stage: deploy
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
   script:
     - mkdir -p /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
     - cp docker-compose-test.yml /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}/docker-compose.yml
@@ -119,6 +207,8 @@ stop_review_app:
 
 deploy-prod:
   stage: deploy
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
   script:
     - mkdir -p /home/robin/prod/rust-admin
     - cp docker-compose-prod.yml /home/robin/prod/rust-admin/docker-compose.yml
