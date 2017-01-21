@@ -172,7 +172,7 @@ release_tags_dockerhub:
 deploy-testing:
   stage: deploy
   before_script:
-    - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
   script:
     - mkdir -p /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
     - cp docker-compose-test.yml /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}/docker-compose.yml
@@ -208,7 +208,7 @@ stop_review_app:
 deploy-prod:
   stage: deploy
   before_script:
-    - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
   script:
     - mkdir -p /home/robin/prod/rust-admin
     - cp docker-compose-prod.yml /home/robin/prod/rust-admin/docker-compose.yml
