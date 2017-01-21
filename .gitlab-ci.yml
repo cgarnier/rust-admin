@@ -7,6 +7,12 @@ stages:
 - release
 - deploy
 
+cache:
+  untracked: true
+  key: "$CI_BUILD_REF_NAME"
+  paths:
+    - node_modules/
+
 variables:
   CONTAINER_TEST_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:$CI_BUILD_REF_NAME
   CONTAINER_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin
@@ -27,9 +33,6 @@ test:
     - docker push $CONTAINER_TEST_IMAGE
   only:
     - branches
-  cache:
-    paths:
-    - node_modules/
   tags:
     - dind
 
@@ -41,8 +44,6 @@ test_tags:
     - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker push $CONTAINER_TEST_IMAGE
-  cache:
-    paths:
     - node_modules/
   artifacts:
     paths:
