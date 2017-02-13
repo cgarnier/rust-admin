@@ -181,7 +181,7 @@ deploy-testing:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
   script:
     - mkdir -p ${HOME}/${TEST_PATH}
-    - cat docker-compose.test.yml | envsubst > ${HOME}/${TEST_PATH}/docker-compose.yml
+    - cat docker-compose-test.yml | envsubst > ${HOME}/${TEST_PATH}/docker-compose.yml
     - cd ${HOME}/${TEST_PATH}
     - docker-compose stop
     - docker-compose pull
@@ -217,7 +217,7 @@ deploy-prod:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
   script:
     - mkdir -p ${HOME}/${PROD_PATH}
-    - cp docker-compose-prod.yml ${HOME}/${PROD_PATH}/docker-compose.yml
+    - cat docker-compose-prod.yml | envsubst > ${HOME}/${PROD_PATH}/docker-compose.yml
     - cd ${HOME}/${PROD_PATH}/
     - docker-compose stop
     - docker-compose pull
