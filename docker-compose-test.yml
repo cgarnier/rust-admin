@@ -1,0 +1,16 @@
+version: "2"
+services:
+  web:
+    image: ${CONTAINER_TEST_IMAGE}
+    environment:
+      - VIRTUAL_HOST=${ENV_TEST_URL}
+      - VIRTUAL_PORT=80
+    networks:
+      - default
+      - proxy
+
+networks:
+  proxy:
+    external:
+      name: proxy_proxy
+
