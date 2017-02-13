@@ -3,7 +3,7 @@ services:
   web:
     image: ${CI_REGISTRY_IMAGE}:latest
     environment:
-      - VIRTUAL_HOST=${ENV_PROD_URL},www.${ENV_TEST_URL}
+      - VIRTUAL_HOST=${ENV_PROD_URL},www.${ENV_PROD_URL}
       - VIRTUAL_PORT=80
     networks:
       - default
