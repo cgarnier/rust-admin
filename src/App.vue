@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div v-if="!loggedIn" class="login">
-      <login @login="login"></login>
+      <login :error="loginError" @login="login"></login>
     </div>
     <div v-if="loggedIn" class="the-app">
       <header>
@@ -30,7 +30,8 @@
     name: 'app',
     data () {
       return {
-        loggedIn: false
+        loggedIn: false,
+        loginError: false
       }
     },
     components: {
@@ -52,9 +53,11 @@
         LoginService.login(data.address, data.password)
           .then(() => {
             this.loggedIn = true
+            this.loginError = false
           })
           .catch(() => {
-            console.log('Cannot restore last session!')
+            this.loginError = true
+            console.log('Cannot login!')
           })
       }
     }

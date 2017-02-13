@@ -1,8 +1,13 @@
 class Utils {
+  /**
+   * Format seconds to human readable duration
+   * @param input seconds
+   * @returns {string} Formated duration
+   */
   formatDuration (input) {
-    var hours = Math.floor(input / 3600)
-    var minutes = Math.floor((input - (hours * 3600)) / 60)
-    var seconds = input - (hours * 3600) - (minutes * 60)
+    let hours = Math.floor(input / 3600)
+    let minutes = Math.floor((input - (hours * 3600)) / 60)
+    let seconds = input - (hours * 3600) - (minutes * 60)
 
     if (hours < 10) {
       hours = '0' + hours
