@@ -5,11 +5,23 @@
       <input v-model="password" type="password" name="address" placeholder="Rcon password">
       <button class="button" type="submit">Login</button>
     </form>
+    <div v-if="error" class="errors">
+      <div class="callout alert">
+        <h5>Login error</h5>
+        <p>Something went wrong while connecting to the server. Make sure the address/password combination is correct</p>
+      </div>
+    </div>
   </div>
 </template>
 <script type="text/babel">
   import './login.scss'
   export default {
+    props: {
+      error: {
+        type: Boolean,
+        default: () => false
+      }
+    },
     data () {
       return {
         address: '',
