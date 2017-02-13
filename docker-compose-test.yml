@@ -1,7 +1,7 @@
 version: "2"
 services:
   web:
-    image: gitlab.nibor.me:4567/arcandiers/rust-admin:$CI_BUILD_REF_NAME
+    image: ${CONTAINER_TEST_IMAGE}
     environment:
       - VIRTUAL_HOST=${ENV_TEST_URL}
       - VIRTUAL_PORT=80

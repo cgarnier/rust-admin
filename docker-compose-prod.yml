@@ -1,7 +1,7 @@
 version: "2"
 services:
   web:
-    image: gitlab.nibor.me:4567/arcandiers/rust-admin:latest
+    image: ${CI_REGISTRY_IMAGE}:latest
     environment:
       - VIRTUAL_HOST=${ENV_PROD_URL},www.${ENV_TEST_URL}
       - VIRTUAL_PORT=80
