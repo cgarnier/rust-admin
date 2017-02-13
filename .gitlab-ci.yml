@@ -12,8 +12,14 @@ cache:
     - node_modules/
 
 variables:
-  CONTAINER_TEST_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin:$CI_BUILD_REF_NAME
-  CONTAINER_IMAGE: gitlab.nibor.me:4567/arcandiers/rust-admin
+  TEST_PATH: envs/${CI_PROJECT_NAME}/${CI_BUILD_REF_NAME}
+  QUAL_PATH: envs/qualities/${CI_PROJECT_NAME}
+  PROD_PATH: envs/productions/${CI_PROJECT_NAME}
+  ENV_TEST_URL: ${CI_BUILD_REF_NAME}.rust-admin.com
+  ENV_QUAL_URL: quality.rust-admin.com
+  ENV_PROD_URL: rust-admin.com
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_BUILD_REF_NAME
+  CONTAINER_IMAGE: $CI_REGISTRY_IMAGE
   #https://gitlab.com/gitlab-org/gitlab-ce/issues/17861#note_12991518
   DOCKER_DRIVER: aufs
   DOCKERHUB_RELEASE: cgarnier/rust-admin
@@ -71,7 +77,7 @@ build:
   services:
     - docker:dind
   before_script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
   tags:
     - dind
 
@@ -172,11 +178,11 @@ release_tags_dockerhub:
 deploy-testing:
   stage: deploy
   before_script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
   script:
-    - mkdir -p /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
-    - cp docker-compose-test.yml /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}/docker-compose.yml
-    - cd /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - mkdir -p ${HOME}/${TEST_PATH}
+    - cat docker-compose.test.yml | envsubst > ${HOME}/${TEST_PATH}/docker-compose.yml
+    - cd ${HOME}/${TEST_PATH}
     - docker-compose stop
     - docker-compose pull
     - docker-compose rm -f
@@ -185,34 +191,34 @@ deploy-testing:
     - master
     - tags
   tags:
-    - tedy.nibor.me
+    - dev3host
   environment:
     name: review/$CI_BUILD_REF_NAME
-    url: http://$CI_BUILD_REF_NAME.rust-admin.nibor.me
+    url: http://$CI_BUILD_REF_NAME.rust-admin.com
     on_stop: stop_review_app
 
 stop_review_app:
   stage: deploy
   script:
-    - cd /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - cd ${HOME}/${TEST_PATH}
     - docker-compose stop
     - docker-compose rm -f
-    - rm -rf /home/robin/testing/rust-admin/${CI_BUILD_REF_NAME}
+    - rm -rf ${HOME}/${TEST_PATH}
   when: manual
   environment:
     name: review/$CI_BUILD_REF_NAME
     action: stop
   tags:
-    - tedy.nibor.me
+    - dev3host
 
 deploy-prod:
   stage: deploy
   before_script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN gitlab.nibor.me:4567
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
   script:
-    - mkdir -p /home/robin/prod/rust-admin
-    - cp docker-compose-prod.yml /home/robin/prod/rust-admin/docker-compose.yml
-    - cd /home/robin/prod/rust-admin/
+    - mkdir -p ${HOME}/${PROD_PATH}
+    - cp docker-compose-prod.yml ${HOME}/${PROD_PATH}/docker-compose.yml
+    - cd ${HOME}/${PROD_PATH}/
     - docker-compose stop
     - docker-compose pull
     - docker-compose rm -f
@@ -220,7 +226,7 @@ deploy-prod:
   only:
     - master
   tags:
-    - tedy.nibor.me
+    - dev3host
   environment:
     name: production
-    url: https://rust-admin.nibor.me
+    url: https://rust-admin.com
