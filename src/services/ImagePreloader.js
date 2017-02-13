@@ -1,5 +1,13 @@
 /* global Image */
+/**
+ * Image preloader
+ */
 class ImagePreloader {
+  /**
+   * Load images
+   * @param img {Array|String} images to preload
+   * @returns {*}
+   */
   load (img) {
     if (Array.isArray(img)) {
       return Promise.all(img.map(this._load))
@@ -7,6 +15,7 @@ class ImagePreloader {
     console.log('Preloading ' + img)
     return this._load(img)
   }
+
   _load (img) {
     console.log('Preloading ' + img)
     return new Promise((resolve, reject) => {

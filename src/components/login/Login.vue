@@ -7,6 +7,7 @@
     </form>
   </div>
 </template>
+
 <script type="text/babel">
   import './login.scss'
   export default {

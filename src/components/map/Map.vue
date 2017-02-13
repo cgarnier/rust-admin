@@ -14,6 +14,7 @@
     </div>
   </div>
 </template>
+
 <script type="text/babel">
   import MapService from '../../services/MapService'
   import ImagePreloader from '../../services/ImagePreloader'

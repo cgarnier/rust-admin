@@ -18,6 +18,7 @@
     </div>
   </div>
 </template>
+
 <script type="text/babel">
   import moment from 'moment'
   import ConsoleService from '../../services/ConsoleService'

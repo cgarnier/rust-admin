@@ -5,9 +5,6 @@ services:
     environment:
       - VIRTUAL_HOST=${ENV_PROD_URL},www.${ENV_TEST_URL}
       - VIRTUAL_PORT=80
-      #- LETSENCRYPT_HOST=${ENV_PROD_URL},www.${ENV_TEST_URL}
-      #- LETSENCRYPT_EMAIL=$LETSENCRYPT_EMAIL
-      #- HTTPS_METHOD=noredirect
     networks:
       - default
       - proxy
