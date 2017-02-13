@@ -8,4 +8,10 @@ services:
       - LETSENCRYPT_HOST=${ENV_PROD_URL},www.${ENV_TEST_URL}
       - LETSENCRYPT_EMAIL=$LETSENCRYPT_EMAIL
       - HTTPS_METHOD=noredirect
-    network_mode: bridge
+    networks:
+      - default
+      - proxy
+networks:
+  proxy:
+    external:
+      name: proxy_proxy
