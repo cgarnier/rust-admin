@@ -101,6 +101,8 @@ release_master_gitlab:
 
 release_master_dockerhub:
   <<: *release_env
+  before_script:
+    - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
   script:
     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:latest
