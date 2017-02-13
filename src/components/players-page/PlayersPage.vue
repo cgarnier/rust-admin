@@ -41,6 +41,7 @@
     </confirm-modal>
   </div>
 </template>
+
 <script type="text/babel">
   import PlayersService from '../../services/PlayersService.js'
   import Utils from '../../services/Utils'

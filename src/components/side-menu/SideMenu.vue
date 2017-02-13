@@ -9,9 +9,6 @@
     <router-link :to="{name: 'players'}" tag="li" class="menu-item">
       <a><i class="ion-person-stalker"></i> Players</a>
     </router-link>
-    <router-link v-if="false" :to="{name: 'map'}" tag="li" class="menu-item">
-      <a><i class="ion-map"></i> Map</a>
-    </router-link>
     <router-link :to="{name: 'chat'}" tag="li" class="menu-item">
       <a><i class="ion-chatbox"></i> Chat</a>
     </router-link>

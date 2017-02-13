@@ -31,6 +31,7 @@
     </div>
   </div>
 </template>
+
 <script type="text/babel">
   import ServerInfosService from '../../services/ServerInfosService'
   import StatsTile from '../stats-tile/StatsTile.vue'

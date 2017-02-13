@@ -23,6 +23,7 @@
     </div>
   </div>
 </template>
+
 <script type="text/babel">
   import ChatService from '../../services/ChatService'
   import moment from 'moment'
@@ -39,7 +40,6 @@
       ChatService.tail()
         .then((res) => {
           this.chatEntries = res
-          console.log('chat', res)
         })
       ChatService.on(this.handleMessage)
     },
