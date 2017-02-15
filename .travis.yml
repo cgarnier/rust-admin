@@ -15,7 +15,7 @@ script:
   - npm run unit
 after_success:
   - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-  - docker build -t $DOCKER_REPO:$COMMIT .
+  - docker build -f Dockerfile-prod -t $DOCKER_REPO:$COMMIT .
   - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:${TRAVIS_TAG:=$TRAVIS_BRANCH}
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:latest;
