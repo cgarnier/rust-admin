@@ -1,4 +1,11 @@
 language: node_js
+services:
+  - docker
+sudo: required
+env:
+  global:
+    - DOCKER_REPO=cgarnier/rust-admin
+    - COMMIT=${TRAVIS_COMMIT::8}
 node_js:
   - "6"
 install:
@@ -6,3 +13,11 @@ install:
 script:
   - npm run build
   - npm run unit
+after_success:
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker build -f Dockerfile -t $DOCKER_REPO:$COMMIT
+  - docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:${TRAVIS_TAG:=$TRAVIS_BRANCH}
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker tag $DOCKER_REPO:$COMMIT $DOCKER_REPO:latest;
+    fi
+  - docker push $DOCKER_REPO
