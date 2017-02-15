@@ -6,7 +6,7 @@ Rust server admin web interface. Full front interface, no backend server.
 
 Similar to [Facepunch](https://github.com/Facepunch) [webrcon](https://github.com/Facepunch/webrcon/tree/master) project.
 
-[View the demo](http://rust-admin.com).
+[View the demo](http://rust-admin.s3-website-eu-west-1.amazonaws.com/).
 
 # Features
 
