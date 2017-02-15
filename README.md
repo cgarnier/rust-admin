@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/cgarnier/rust-admin.svg?token=pcN2pNaGWdS1MEM5rxq2&branch=master)](https://travis-ci.com/cgarnier/rust-admin)
+
 # rust-admin
 
 Rust server admin web interface. Full front interface, no backend server.

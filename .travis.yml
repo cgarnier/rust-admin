@@ -29,3 +29,5 @@ deploy:
   local_dir: dist
   skip_cleanup: true
   acl: public_read
+  on:
+    branch: travis
