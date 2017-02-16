@@ -1,0 +1,4 @@
+web:
+  image: cgarnier/rust-admin:latest
+  ports:
+    - 80:80
