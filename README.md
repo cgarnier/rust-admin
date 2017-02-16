@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.com/cgarnier/rust-admin.svg?token=pcN2pNaGWdS1MEM5rxq2&branch=master)](https://travis-ci.com/cgarnier/rust-admin)
 
+[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/)
+
 # rust-admin
 
 Rust server admin web interface. Full front interface, no backend server.
