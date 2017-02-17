@@ -47,6 +47,9 @@
         .then(() => {
           this.loggedIn = true
         })
+        .catch(() => {
+          console.log('Unable to restore last session.')
+        })
     },
     methods: {
       login (data) {
