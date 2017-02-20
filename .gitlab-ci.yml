@@ -54,23 +54,6 @@ build:
   tags:
     - dind
 
-
-# test_tags:
-#   stage: test
-#   script:
-#     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-dev .
-#     - docker run $CONTAINER_TEST_IMAGE npm test
-#     - docker run -v $PWD/dist:/app/dist $CONTAINER_TEST_IMAGE npm run build
-#     - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
-#     - docker push $CONTAINER_TEST_IMAGE
-#   artifacts:
-#     paths:
-#       - dist/
-#   tags:
-#     - dind
-#   only:
-#     - tags
-
 .release_env: &release_env
   stage: release
   image: "docker:git"
@@ -84,7 +67,7 @@ build:
 release:
   <<: *release_env
   script:
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile .
     - docker push $CONTAINER_TEST_IMAGE
   except:
     - master
@@ -93,7 +76,7 @@ release:
 release_master_gitlab:
   <<: *release_env
   script:
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile .
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:latest
     - docker push $CONTAINER_IMAGE:latest
   only:
@@ -104,7 +87,7 @@ release_master_dockerhub:
   before_script:
     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
   script:
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile .
     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:latest
     - docker push $DOCKERHUB_RELEASE:latest
   only:
@@ -115,7 +98,7 @@ release_tags_gitlab:
   before_script:
     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
   script:
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile .
     - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_IMAGE:$CI_BUILD_TAG
     - docker push $CONTAINER_IMAGE:$CI_BUILD_TAG
   only:
@@ -126,7 +109,7 @@ release_tags_dockerhub:
   before_script:
     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASSWORD}
   script:
-    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile-prod .
+    - docker build -t $CONTAINER_TEST_IMAGE -f Dockerfile .
     - docker tag $CONTAINER_TEST_IMAGE $DOCKERHUB_RELEASE:$CI_BUILD_TAG
     - docker push $DOCKERHUB_RELEASE:$CI_BUILD_TAG
   only:
