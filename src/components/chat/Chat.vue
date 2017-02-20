@@ -10,7 +10,7 @@
             <span v-if="entry.id === '0' || entry.id === 0">{{entry.name}}</span>
             <router-link v-else :to="{name: 'player', params: {id: entry.id}}">{{entry.name}}</router-link>
           </span>
-          <span class="message">{{entry.message}}</span>
+          <chat-message :message="entry.message" :rich-text="true"></chat-message>
         </div>
         <div ref="bottom"></div>
       </div>
@@ -28,12 +28,14 @@
   import ChatService from '../../services/ChatService'
   import moment from 'moment'
   import Vue from 'vue'
+  import ChatMessage from '../chat-message/ChatMessage.vue'
   import './chat.scss'
   export default {
     data () {
       return {
         chatEntries: [],
-        input: ''
+        input: '',
+        richText: true
       }
     },
     mounted () {
@@ -72,6 +74,9 @@
     },
     beforeDestroy () {
       ChatService.off(this.handleMessage)
+    },
+    components: {
+      ChatMessage
     }
   }
 </script>

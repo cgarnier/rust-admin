@@ -13,11 +13,15 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "escape-html": "^1.0.3",
     "events": "^1.1.1",
     "ionicons": "^2.0.1",
     "moment": "^2.17.1",
     "promise-polyfill": "^6.0.2",
     "rest": "^2.0.0",
+    "sanitize-html": "^1.14.1",
+    "unity-richtext-parser": "^0.1.0",
+    "v-tooltip": "^1.1.2",
     "vue": "^2.1.0",
     "vue-router": "^2.1.1"
   },

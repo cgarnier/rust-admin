@@ -16,7 +16,9 @@ import PlayersPage from 'components/players-page/PlayersPage.vue'
 import ChatPage from 'components/chat-page/ChatPage.vue'
 import MapPage from 'components/map-page/MapPage.vue'
 import PlayerPage from 'components/player-page/PlayerPage.vue'
+import VTooltip from 'v-tooltip'
 
+Vue.use(VTooltip)
 Vue.use(VueRouter)
 const routes = [
   {
