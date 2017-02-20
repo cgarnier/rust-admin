@@ -1,3 +1,9 @@
+// Promise polyfill
+const Promise = require('promise-polyfill')
+if (!window.Promise) {
+  window.Promise = Promise
+}
+
 // Polyfill fn.bind() for PhantomJS
 /* eslint-disable no-extend-native */
 Function.prototype.bind = require('function-bind')
