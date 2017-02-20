@@ -1,7 +1,7 @@
 <template>
   <div class="login-form">
     <form @submit.prevent="login" class="text-center">
-      <input v-model="address" type="text" name="address" placeholder="Rcon address">
+      <input v-model="address" type="text" name="address" placeholder="Rcon address" v-if="!hostForced">
       <input v-model="password" type="password" name="address" placeholder="Rcon password">
       <button class="button" type="submit">Login</button>
     </form>
@@ -16,6 +16,7 @@
 
 <script type="text/babel">
   import './login.scss'
+  import EnvService from '../../services/EnvService'
   export default {
     props: {
       error: {
@@ -26,8 +27,24 @@
     data () {
       return {
         address: '',
-        password: ''
+        password: '',
+        hostForced: false,
+        fetched: false
       }
+    },
+    mounted () {
+      EnvService.get()
+        .then(res => {
+          if (res.RA_FORCE_HOST) {
+            this.hostForced = true
+            this.address = res.RA_FORCE_HOST
+            this.fetched = true
+          }
+        })
+        .catch(err => {
+          console.log('Something went wrong: ', err)
+          this.fetched = true
+        })
     },
     methods: {
       login () {

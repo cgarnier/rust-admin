@@ -22,11 +22,15 @@ Similar to [Facepunch](https://github.com/Facepunch) [webrcon](https://github.co
 
 ## Using docker
 
-```
+```bash
 docker run -d --name rust-admin -p 80:80 cgarnier/rust-admin:latest
 ```
-
 Then visit [http://localhost](http://localhost).
+
+### Environment variables:
+
+  * RA_FORCE_HOST: Force the rust server rcon address and disallow user to login elsewhere.
+  
 
 # Contribute
 
