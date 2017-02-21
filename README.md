@@ -59,3 +59,13 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+# Changelog
+
+## v1.3.0
+  * Added richtext to the chat
+
+## v1.2.0
+  * Force rust host configuration
+  * Fix unhandled exception on startup
+  * Added deploy to cloud button
