@@ -86,6 +86,7 @@
     },
     beforeDestroy () {
       ChatService.off(this.handleMessage)
+      document.removeEventListener('click', this.clickHandler)
     },
     components: {
       ChatMessage
