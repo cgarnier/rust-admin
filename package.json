@@ -20,7 +20,7 @@
     "promise-polyfill": "^6.0.2",
     "rest": "^2.0.0",
     "sanitize-html": "^1.14.1",
-    "unity-richtext-parser": "^0.1.0",
+    "unity-richtext-parser": "^0.2.0",
     "v-tooltip": "^1.1.2",
     "vue": "^2.1.0",
     "vue-router": "^2.1.1"
