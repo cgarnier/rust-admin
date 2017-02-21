@@ -1,5 +1,19 @@
 $log: #7d7d7d;
 .chat {
+  position: relative;
+  .chat-settings {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 200px;
+    button.dropdown {
+      float: right;
+    }
+    .dropdown.menu {
+      margin-top: 28px;
+      background-color: #fff;
+    }
+  }
   .chat-wrapper {
     height: 100%;
     .chat-content {
